@@ -12,9 +12,7 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'gei' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'gei' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'gei' ), 'Global Engineering Initiative', '<a href="http://underscores.me/" rel="designer">Leilani Graham-Laidlaw & Ned Zimmerman</a>' ); ?>
+			Global Engineering Initiative &copy; 2014
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
