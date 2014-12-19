@@ -92,7 +92,14 @@ add_action( 'widgets_init', 'gei_widgets_init' );
  * Enqueue scripts and styles.
  */
 function gei_scripts() {
-	wp_enqueue_style( 'gei-style', get_stylesheet_uri() );
+
+	wp_enqueue_style( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css' );
+
+	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Raleway:800|Source+Sans+Pro' );
+	
+	wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' );
+	
+	//wp_enqueue_style( 'gei-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'gei-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
@@ -128,3 +135,18 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Initialize post types.
+ */
+require get_template_directory() . '/inc/post-types/gei_resource.php';
+
+/**
+ * Initialize taxonomies.
+ */
+require get_template_directory() . '/inc/taxonomies/gei_discipline.php';
+require get_template_directory() . '/inc/taxonomies/gei_module.php';
+require get_template_directory() . '/inc/taxonomies/gei_region.php';
+require get_template_directory() . '/inc/taxonomies/gei_skill.php';
+require get_template_directory() . '/inc/taxonomies/gei_topic.php';
+require get_template_directory() . '/inc/taxonomies/gei_type.php';
