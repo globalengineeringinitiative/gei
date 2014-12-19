@@ -24,7 +24,7 @@ function gei_resource_init() {
 		'menu_position'		=> 5,
 		'supports'          => array( 'title', 'editor' ),
 		'has_archive'       => true,
-		'rewrite'           => true,
+		'rewrite'           => array( 'slug' => __( 'resources', 'gei') ),
 		'query_var'         => true,
 	) );
 	if ( function_exists( 'pti_set_post_type_icon' ) ) pti_set_post_type_icon( 'gei_resource', 'file-text-o' );
