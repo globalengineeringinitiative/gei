@@ -31,6 +31,17 @@ function gei_resource_init() {
 }
 add_action( 'init', 'gei_resource_init' );
 
+function gei_metadata_admin() {
+	remove_meta_box( 'tagsdiv-gei_discipline', 'gei_resource', 'side' );
+	remove_meta_box( 'tagsdiv-gei_module', 'gei_resource', 'side' );
+	remove_meta_box( 'tagsdiv-gei_region', 'gei_resource', 'side' );
+	remove_meta_box( 'tagsdiv-gei_skill', 'gei_resource', 'side' );
+	remove_meta_box( 'tagsdiv-gei_topic', 'gei_resource', 'side' );
+	remove_meta_box( 'tagsdiv-gei_type', 'gei_resource', 'side' );
+}
+
+add_action( 'add_meta_boxes', 'gei_metadata_admin', 12 );
+
 function gei_resource_updated_messages( $messages ) {
 	global $post;
 
