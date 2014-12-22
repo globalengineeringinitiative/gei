@@ -22,7 +22,7 @@ function gei_resource_init() {
 		'show_ui'           => true,
 		'show_in_nav_menus' => true,
 		'menu_position'		=> 5,
-		'supports'          => array( 'title', 'editor' ),
+		'supports'          => array( 'title', 'editor', 'author' ),
 		'has_archive'       => true,
 		'rewrite'           => array( 'slug' => __( 'resources', 'gei') ),
 		'query_var'         => true,
