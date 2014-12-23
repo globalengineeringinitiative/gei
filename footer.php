@@ -10,14 +10,15 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer id="colophon" class="site-footer col-md-8 col-md-offset-2" role="contentinfo">
 		<div class="site-info">
-			Global Engineering Initiative &copy; 2014
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a> &copy; 2014&ndash;<?php echo date( 'Y' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
+<script>jQuery('.carousel').carousel()</script>
 
 </body>
 </html>

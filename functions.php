@@ -38,7 +38,8 @@ function gei_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	//add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails' );
+	add_image_size( 'slide', 1600, 900 );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -92,22 +93,14 @@ add_action( 'widgets_init', 'gei_widgets_init' );
  * Enqueue scripts and styles.
  */
 function gei_scripts() {
-
-	wp_enqueue_style( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css' );
-
-	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Raleway:800|Source+Sans+Pro' );
+	wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic|Alegreya:400italic,700italic,900italic,400,700,900|Raleway:400,300,200,100,500,600,700,800,900' );
 	
 	wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' );
 	
-	//wp_enqueue_style( 'gei-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'gei-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'gei-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/javascripts/bootstrap.js', array( 'jquery' ), '3.3.1', true );
 
-	wp_enqueue_script( 'gei-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
 }
 add_action( 'wp_enqueue_scripts', 'gei_scripts' );
 
@@ -150,3 +143,14 @@ require get_template_directory() . '/inc/taxonomies/gei_region.php';
 require get_template_directory() . '/inc/taxonomies/gei_skill.php';
 require get_template_directory() . '/inc/taxonomies/gei_topic.php';
 require get_template_directory() . '/inc/taxonomies/gei_type.php';
+
+
+// shame
+
+add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+function special_nav_class($classes, $item){
+     if( in_array('current-menu-item', $classes) ){
+             $classes[] = 'active ';
+     }
+     return $classes;
+}
