@@ -389,7 +389,7 @@ register_field_group( array (
 			'multiple' => 0,
 		),
 		array (
-			'key' => 'field_5498df6cedf10',
+			'key' => 'field_5498ebde9b896',
 			'label' => 'Region(s)',
 			'name' => 'regions',
 			'prefix' => '',

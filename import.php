@@ -152,7 +152,7 @@
 				foreach ( $resource['regions'] as $region ) {
 					$term = get_term_by( 'slug', $region, 'gei_region' );
 					update_post_meta( $post_id, 'regions', $term->term_id );
-					update_post_meta( $post_id, '_regions', 'field_5498df6cedf10' );
+					update_post_meta( $post_id, '_regions', 'field_5498ebde9b896' );
 				}
 			}
 			if ( $resource['skills'] ) {
