@@ -32,11 +32,6 @@ function gei_resource_init() {
 add_action( 'init', 'gei_resource_init' );
 
 function gei_metadata_admin() {
-	/* remove_meta_box( 'tagsdiv-gei_discipline', 'gei_resource', 'side' );
-	remove_meta_box( 'tagsdiv-gei_module', 'gei_resource', 'side' );
-	remove_meta_box( 'tagsdiv-gei_region', 'gei_resource', 'side' );
-	remove_meta_box( 'tagsdiv-gei_skill', 'gei_resource', 'side' );
-	remove_meta_box( 'tagsdiv-gei_topic', 'gei_resource', 'side' ); */
 	remove_meta_box( 'tagsdiv-gei_type', 'gei_resource', 'side' );
 }
 
@@ -346,111 +341,6 @@ register_field_group( array (
 			'return_format' => 'id',
 			'multiple' => 0,
 		),
-		/* array (
-			'key' => 'field_54949ab19cd76',
-			'label' => 'Discipline(s)',
-			'name' => 'disciplines',
-			'prefix' => '',
-			'type' => 'taxonomy',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'taxonomy' => 'gei_discipline',
-			'field_type' => 'multi_select',
-			'allow_null' => 0,
-			'load_save_terms' => 1,
-			'return_format' => 'id',
-			'multiple' => 0,
-		),
-		array (
-			'key' => 'field_54988e077e084',
-			'label' => 'Module(s)',
-			'name' => 'modules',
-			'prefix' => '',
-			'type' => 'taxonomy',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'taxonomy' => 'gei_module',
-			'field_type' => 'multi_select',
-			'allow_null' => 0,
-			'load_save_terms' => 1,
-			'return_format' => 'id',
-			'multiple' => 0,
-		),
-		array (
-			'key' => 'field_5498ebde9b896',
-			'label' => 'Region(s)',
-			'name' => 'regions',
-			'prefix' => '',
-			'type' => 'taxonomy',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'taxonomy' => 'gei_region',
-			'field_type' => 'multi_select',
-			'allow_null' => 0,
-			'load_save_terms' => 1,
-			'return_format' => 'id',
-			'multiple' => 0,
-		),
-		array (
-			'key' => 'field_54949ad09cd77',
-			'label' => 'Skill(s)',
-			'name' => 'skills',
-			'prefix' => '',
-			'type' => 'taxonomy',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'taxonomy' => 'gei_skill',
-			'field_type' => 'multi_select',
-			'allow_null' => 0,
-			'load_save_terms' => 1,
-			'return_format' => 'id',
-			'multiple' => 0,
-		),
-		array (
-			'key' => 'field_54949ade9cd78',
-			'label' => 'Topic(s)',
-			'name' => 'topics',
-			'prefix' => '',
-			'type' => 'taxonomy',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'taxonomy' => 'gei_topic',
-			'field_type' => 'multi_select',
-			'allow_null' => 0,
-			'load_save_terms' => 1,
-			'return_format' => 'id',
-			'multiple' => 0,
-		), */
 	),
 	'location' => array (
 		array (
