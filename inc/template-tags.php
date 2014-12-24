@@ -165,7 +165,7 @@ function the_archive_title( $before = '', $after = '' ) {
 		$title = _x( 'Audio', 'post format archive title', 'gei' );
 	} elseif ( is_tax( 'post_format', 'post-format-chat' ) ) {
 		$title = _x( 'Chats', 'post format archive title', 'gei' );
-	} elseif ( is_post_type_archive() ) {
+	} elseif ( is_post_type_archive( ) ) {
 		$title = sprintf( __( 'Archives: %s', 'gei' ), post_type_archive_title( '', false ) );
 	} elseif ( is_tax() ) {
 		$tax = get_taxonomy( get_queried_object()->taxonomy );

@@ -23,6 +23,21 @@ body {
 	a {
 		@include transition( all, 0.4s );
 	}
+	&.page-template-page-library {
+		#resources {
+			#filters {
+				.button-group {
+					// display: none;
+					&.active { display: block; }
+					padding-left: 0;
+					li {
+						list-style-type: none;
+						padding-bottom: 0.2em;
+					}
+				}
+			}
+		}
+	}
 	#colophon {
 		text-align: center;
 		.site-info {

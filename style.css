@@ -2654,7 +2654,7 @@ select[multiple].input-lg,
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px; }
   .btn:hover, .btn:focus, .btn.focus {
-    color: #333;
+    color: #fff;
     text-decoration: none; }
   .btn:active, .btn.active {
     outline: 0;
@@ -2670,21 +2670,21 @@ select[multiple].input-lg,
     box-shadow: none; }
 
 .btn-default {
-  color: #333;
-  background-color: #fff;
+  color: #fff;
+  background-color: #c2c2c2;
   border-color: #ccc; }
   .btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active, .open > .btn-default.dropdown-toggle {
-    color: #333;
-    background-color: #e6e6e6;
+    color: #fff;
+    background-color: darkgray;
     border-color: #adadad; }
   .btn-default:active, .btn-default.active, .open > .btn-default.dropdown-toggle {
     background-image: none; }
   .btn-default.disabled, .btn-default.disabled:hover, .btn-default.disabled:focus, .btn-default.disabled.focus, .btn-default.disabled:active, .btn-default.disabled.active, .btn-default[disabled], .btn-default[disabled]:hover, .btn-default[disabled]:focus, .btn-default[disabled].focus, .btn-default[disabled]:active, .btn-default[disabled].active, fieldset[disabled] .btn-default, fieldset[disabled] .btn-default:hover, fieldset[disabled] .btn-default:focus, fieldset[disabled] .btn-default.focus, fieldset[disabled] .btn-default:active, fieldset[disabled] .btn-default.active {
-    background-color: #fff;
+    background-color: #c2c2c2;
     border-color: #ccc; }
   .btn-default .badge {
-    color: #fff;
-    background-color: #333; }
+    color: #c2c2c2;
+    background-color: #fff; }
 
 .btn-primary {
   color: #fff;
@@ -2797,9 +2797,9 @@ select[multiple].input-lg,
 
 .btn-sm, .btn-group-sm > .btn {
   padding: 5px 10px;
-  font-size: 12px;
-  line-height: 1.5;
-  border-radius: 3px; }
+  font-size: 14px;
+  line-height: 1.428571429;
+  border-radius: 4px; }
 
 .btn-xs, .btn-group-xs > .btn {
   padding: 1px 5px;
@@ -5397,5 +5397,12 @@ body {
     -webkit-transition: all, 0.4s;
     -o-transition: all, 0.4s;
     transition: all, 0.4s; }
+  body.page-template-page-library #resources #filters .button-group {
+    padding-left: 0; }
+    body.page-template-page-library #resources #filters .button-group.active {
+      display: block; }
+    body.page-template-page-library #resources #filters .button-group li {
+      list-style-type: none;
+      padding-bottom: 0.2em; }
   body #colophon {
     text-align: center; }

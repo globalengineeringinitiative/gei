@@ -40,4 +40,4 @@
 		</div>
 	</nav><!-- #site-navigation -->
 
-	<div id="content" class="site-content col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+	<div id="content" class="site-content">
