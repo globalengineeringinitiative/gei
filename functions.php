@@ -101,6 +101,10 @@ function gei_scripts() {
 
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/javascripts/bootstrap.js', array( 'jquery' ), '3.3.1', true );
 	
+	wp_enqueue_script( 'fastclick', get_template_directory_uri() . '/assets/javascripts/fastclick.js', array( 'jquery' ), '1.0', true );
+
+	wp_enqueue_script( 'gei', get_template_directory_uri() . '/assets/javascripts/gei.min.js', array( 'jquery' ), '1.0', true );
+	
 	if ( is_page( __( 'Library', 'gei' ) ) ) {
 		
 		wp_enqueue_script( 'isotope', get_template_directory_uri() . '/assets/javascripts/isotope.pkgd.min.js', array( 'jquery' ), '2.1', true );
