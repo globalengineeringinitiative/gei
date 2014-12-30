@@ -19,7 +19,7 @@ get_header(); ?>
 		<section id="resources" class="container">
 			<div id="filters" class="resource-filter col-md-3">
 				<h1><?php _e( 'Filter', 'gei' ); ?></h1>
-				<h2><?php _e( 'Discipline', 'gei' ); ?></h2>
+				<h2><a class="show-filter" id="discipline"><?php _e( 'Discipline', 'gei' ); ?> <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a></button></h2>
 				<ul class="button-group" data-filter-group="discipline">
 					<li><button class="btn btn-sm btn-primary" data-filter=""><?php _e( 'All', 'gei' ); ?></button></li>
 					<?php $terms = get_terms( 'gei_discipline' );
@@ -27,7 +27,7 @@ get_header(); ?>
 					<li><button class="btn btn-sm btn-default" data-filter=".<?php echo $term->slug; ?>"><?php echo $term->name; ?></button></li>
 					<?php } ?>
 				</ul>
-				<h2><?php _e( 'Module', 'gei' ); ?></h2>
+				<h2><a class="show-filter" id="module"><?php _e( 'Module', 'gei' ); ?> <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a></h2>
 				<ul class="button-group" data-filter-group="module">
 					<li><button class="btn btn-sm btn-primary" data-filter=""><?php _e( 'All', 'gei' ); ?></button></li>
 					<?php $terms = get_terms( 'gei_module' );
@@ -35,7 +35,7 @@ get_header(); ?>
 					<li><button class="btn btn-sm btn-default" data-filter=".<?php echo $term->slug; ?>"><?php echo $term->name; ?></button></li>
 					<?php } ?>
 				</ul>
-				<h2><?php _e( 'Region', 'gei' ); ?></h2>
+				<h2><a class="show-filter" id="region"><?php _e( 'Region', 'gei' ); ?> <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a></h2>
 				<ul class="button-group" data-filter-group="region">
 					<li><button class="btn btn-sm btn-primary" data-filter=""><?php _e( 'All', 'gei' ); ?></button></li>
 					<?php $terms = get_terms( 'gei_region' );
@@ -43,7 +43,7 @@ get_header(); ?>
 					<li><button class="btn btn-sm btn-default" data-filter=".<?php echo $term->slug; ?>"><?php echo $term->name; ?></button></li>
 					<?php } ?>
 				</ul>
-				<h2><?php _e( 'Skill', 'gei' ); ?></h2>
+				<h2><a class="show-filter" id="skill"><?php _e( 'Skill', 'gei' ); ?> <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a></h2>
 				<ul class="button-group" data-filter-group="skill">
 					<li><button class="btn btn-sm btn-primary" data-filter=""><?php _e( 'All', 'gei' ); ?></button></li>
 					<?php $terms = get_terms( 'gei_skill' );
@@ -51,7 +51,7 @@ get_header(); ?>
 					<li><button class="btn btn-sm btn-default" data-filter=".<?php echo $term->slug; ?>"><?php echo $term->name; ?></button></li>
 					<?php } ?>
 				</ul>
-				<h2><?php _e( 'Topic', 'gei' ); ?></h2>
+				<h2><a class="show-filter" id="topic"><?php _e( 'Topic', 'gei' ); ?> <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a></h2>
 				<ul class="button-group" data-filter-group="topic">
 					<li><button class="btn btn-sm btn-primary" data-filter=""><?php _e( 'All', 'gei' ); ?></button></li>
 					<?php $terms = get_terms( 'gei_topic' );
@@ -59,7 +59,7 @@ get_header(); ?>
 					<li><button class="btn btn-sm btn-default" data-filter=".<?php echo $term->slug; ?>"><?php echo $term->name; ?></button></li>
 					<?php } ?>
 				</ul>
-				<h2><?php _e( 'Media Type', 'gei' ); ?></h2>
+				<h2><a class="show-filter" id="type"><?php _e( 'Type', 'gei' ); ?> <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a></h2>
 				<ul class="button-group" data-filter-group="type">
 					<li><button class="btn btn-sm btn-primary" data-filter=""><?php _e( 'All', 'gei' ); ?></button></li>
 					<?php $terms = get_terms( 'gei_type' );
@@ -78,6 +78,12 @@ get_header(); ?>
 				foreach ( $resources as $post ) {
 					get_template_part( 'content', 'gei_resource' );
 				} ?>
+				<div id="no-match" class="panel panel-primary">
+					<div class="panel-heading">
+						<h2 class="panel-title"><?php echo get_option( 'options_no_match_title' ); ?></h2>
+					</div>
+					<div class="panel-body"><?php echo get_option( 'options_no_match_text' ); ?></div>
+				</div>
 			</div>
 		</section>
 	</div><!-- #primary -->

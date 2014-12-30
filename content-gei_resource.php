@@ -10,42 +10,53 @@
 	'gei_region',
 	'gei_skill',
 	'gei_topic',
-	'gei_type',
 ) );
-$post_class = '';
+$types = wp_get_object_terms( $post->ID, array( 'gei_type' ) );
+$post_class = 'panel panel-primary ';
 foreach ( $terms as $term ) {
 	$post_class .= $term->slug . ' ';
+}
+foreach ( $types as $type ) {
+	$post_class .= $type->slug . ' ';
 } ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( rtrim ( $post_class ) ); ?>>
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
-
-		<?php if ( 'post' == get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php gei_posted_on(); ?>
-		</div><!-- .entry-meta -->
+<div id="post-<?php the_ID(); ?>" <?php post_class( rtrim ( $post_class ) ); ?>>
+	<div class="panel-heading">
+		<?php the_title( sprintf( '<h1 class="panel-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+		<?php if ( get_field( 'subtitle' ) ) : ?>
+			<h2 class="subtitle"><?php the_field( 'subtitle' ); ?></h2>
 		<?php endif; ?>
-	</header><!-- .entry-header -->
+		<?php if ( 'post' == get_post_type() ) : ?>
+		<div class="resource-meta">
+			<?php gei_posted_on(); ?>
+		</div><!-- .resource-meta -->
+		<?php endif; ?>
+	</div><!-- .panel-heading -->
 
-	<div class="entry-content">
-		<?php
-			/* translators: %s: Name of current post */
-			the_content( sprintf(
-				__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'gei' ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
-		?>
+	<div class="panel-body">
+		<?php if ( get_field( 'summary' ) ) the_field( 'summary' ); ?>
+	</div><!-- .resource-content -->
 
-		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'gei' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php gei_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+	<footer class="panel-footer">
+		<p><?php if ( get_field( 'authors' ) ) : $authors = get_field( 'authors' );
+				$c = count( $authors );
+				$i = 1;
+				foreach ( $authors as $author ) {
+					echo $author['first_name'] . ' ' . $author['last_name'];
+					if ( $c > 2 && $i < $c ) echo ', ';
+					if ( $i == ( $c - 1 ) ) echo ' and ';
+					$i++;
+				} ?><br /><?php endif; ?>
+		<?php if ( get_field( 'publication_date' ) ) :
+		$date = DateTime::createFromFormat('m/d/Y', get_field('publication_date') );
+		echo $date->format('F Y');
+		endif; ?></p>
+		<ul id="tags">
+			<?php foreach ( $terms as $term ) { ?>
+			<li><a class="btn btn-primary"><?php echo $term->name; ?></a></li>
+			<?php } ?>
+			<li>		<a class="btn btn-default"><?php echo $type->name; ?></a>
+			</li>
+		</ul>
+	</footer><!-- .resource-footer -->
+</div><!-- #post-## -->

@@ -26,13 +26,47 @@ body {
 	&.page-template-page-library {
 		#resources {
 			#filters {
+				h1 { font-size: $font-size-large; }
+				h2 { font-size: $font-size-base; }
+				.show-filter {
+					cursor: pointer;
+					.glyphicon {
+						top: 3px;
+						left: 2px;
+						@include transition(all, 0.4s);
+					}
+					&.active {
+						.glyphicon {
+							@include transform(rotate(180deg));
+						}
+					}
+				}
 				.button-group {
-					// display: none;
+					display: none;
 					&.active { display: block; }
 					padding-left: 0;
 					li {
 						list-style-type: none;
-						padding-bottom: 0.2em;
+						padding-bottom: 0.5em;
+					}
+				}
+			}
+			#no-match { display: none; }
+			#isotope {
+				.panel {
+					width: 100%;
+					h1 { font-size: $font-size-large; }
+					h2 { font-size: $font-size-base; }
+					#tags {
+						padding-left: 0;
+						margin-bottom: 0;
+						li {
+							list-style-type: none;
+							margin-bottom: 0.5em;
+							&:last-child {
+								margin-bottom: 0.25em;
+							}
+						}
 					}
 				}
 			}

@@ -263,8 +263,8 @@ th {
     border: 1px solid #ddd !important; } }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url("../fonts/bootstrap/glyphicons-halflings-regular.eot");
-  src: url("../fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/bootstrap/glyphicons-halflings-regular.woff") format("woff"), url("../fonts/bootstrap/glyphicons-halflings-regular.ttf") format("truetype"), url("../fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
+  src: url("assets/fonts/bootstrap/glyphicons-halflings-regular.eot");
+  src: url("assets/fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("assets/fonts/bootstrap/glyphicons-halflings-regular.woff") format("woff"), url("assets/fonts/bootstrap/glyphicons-halflings-regular.ttf") format("truetype"), url("assets/fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
 .glyphicon {
   position: relative;
   top: 1px;
@@ -5397,12 +5397,47 @@ body {
     -webkit-transition: all, 0.4s;
     -o-transition: all, 0.4s;
     transition: all, 0.4s; }
+  body.page-template-page-library #resources #filters h1 {
+    font-size: 18px; }
+  body.page-template-page-library #resources #filters h2 {
+    font-size: 14px; }
+  body.page-template-page-library #resources #filters .show-filter {
+    cursor: pointer; }
+    body.page-template-page-library #resources #filters .show-filter .glyphicon {
+      top: 3px;
+      left: 2px;
+      -webkit-transition: all, 0.4s;
+      -o-transition: all, 0.4s;
+      transition: all, 0.4s; }
+    body.page-template-page-library #resources #filters .show-filter.active .glyphicon {
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      transform: rotate(180deg); }
   body.page-template-page-library #resources #filters .button-group {
+    display: none;
     padding-left: 0; }
     body.page-template-page-library #resources #filters .button-group.active {
       display: block; }
     body.page-template-page-library #resources #filters .button-group li {
       list-style-type: none;
-      padding-bottom: 0.2em; }
+      padding-bottom: 0.5em; }
+  body.page-template-page-library #resources #no-match {
+    display: none; }
+  body.page-template-page-library #resources #isotope .panel {
+    width: 100%; }
+    body.page-template-page-library #resources #isotope .panel h1 {
+      font-size: 18px; }
+    body.page-template-page-library #resources #isotope .panel h2 {
+      font-size: 14px; }
+    body.page-template-page-library #resources #isotope .panel #tags {
+      padding-left: 0;
+      margin-bottom: 0; }
+      body.page-template-page-library #resources #isotope .panel #tags li {
+        list-style-type: none;
+        margin-bottom: 0.5em; }
+        body.page-template-page-library #resources #isotope .panel #tags li:last-child {
+          margin-bottom: 0.25em; }
   body #colophon {
     text-align: center; }

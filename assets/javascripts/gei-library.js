@@ -19,4 +19,17 @@
 	  	$this.addClass('btn-primary').removeClass('btn-default');
 	  	$prev.addClass('btn-default').removeClass('btn-primary');
 	});
+	$container.isotope( 'on', 'layoutComplete', function( isoInstance, laidOutItems ) {
+    	if ( laidOutItems.length === 0 ) {
+			$('#no-match').show();
+		} else {
+			$('#no-match').hide();
+     	}
+	});
+	$('.show-filter').on( 'click', function(e) {
+		e.preventDefault();
+		var group = $(this).attr('id');
+		$('[data-filter-group="'+group+'"]').toggleClass('active');
+		$(this).toggleClass('active');
+	});
 } )( jQuery );
