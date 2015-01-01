@@ -51,8 +51,42 @@ body {
 			content: counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) " ";
 		}
 	}
-	
-	
+	.navbar-fixed-top {
+		ul.navbar-nav {
+			li {
+				ul.sub-menu {
+					display: none;
+					list-style-type: none;
+					-webkit-padding-start: 0;
+					position: fixed;
+					background: $navbar-default-bg;
+					border-top: solid 1px $navbar-default-bg;
+					border-right: solid 1px $navbar-default-border;
+					border-bottom: solid 1px $navbar-default-border;
+					border-left: solid 1px $navbar-default-border;
+					li {
+						font-size: $font-size-base;
+						font-family: $headings-font-family;
+						font-weight: $headings-font-weight;
+						line-height: $line-height-computed;
+						text-transform: uppercase;
+						padding: 10px 15px;
+						a {
+							color: $navbar-default-link-color;
+							&:hover {
+								color: $navbar-default-link-hover-color;
+							}
+						}
+					}
+				}
+				&:hover {
+					ul.sub-menu {
+						display: block;
+					}
+				}
+			}
+		}
+	}
 	&.page-template-page-library {
 		#resources {
 			#filters {
