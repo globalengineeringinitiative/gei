@@ -34,7 +34,11 @@ foreach ( $types as $type ) {
 	</div><!-- .panel-heading -->
 
 	<div class="panel-body">
-		<?php if ( get_field( 'summary' ) ) the_field( 'summary' ); ?>
+		<?php if ( get_field( 'short_summary' ) ) : ?>
+			<p><?php the_field( 'short_summary' ); ?></p>
+		<?php else :
+			the_field( 'summary' );
+		endif; ?>
 	</div><!-- .resource-content -->
 
 	<footer class="panel-footer">
