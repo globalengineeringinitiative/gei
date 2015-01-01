@@ -5397,6 +5397,22 @@ body {
     -webkit-transition: all, 0.4s;
     -o-transition: all, 0.4s;
     transition: all, 0.4s; }
+  body h3 {
+    counter-increment: h3; }
+    body h3:before {
+      content: counter(h3) ".0 "; }
+  body h4 {
+    counter-increment: h4; }
+    body h4:before {
+      content: counter(h3) "." counter(h4) " "; }
+  body h5 {
+    counter-increment: h5; }
+    body h5:before {
+      content: counter(h3) "." counter(h4) "." counter(h5) " "; }
+  body h6 {
+    counter-increment: h6; }
+    body h6:before {
+      content: counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) " "; }
   body.page-template-page-library #resources #filters h1 {
     font-size: 18px; }
   body.page-template-page-library #resources #filters h2 {

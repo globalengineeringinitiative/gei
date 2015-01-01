@@ -23,6 +23,33 @@ body {
 	a {
 		@include transition( all, 0.4s );
 	}
+	
+	h3 {
+		counter-increment: h3;
+		&:before {
+			content: counter(h3) ".0 ";
+		}
+	}
+	h4 {
+		counter-increment: h4;  
+		&:before {
+			content: counter(h3) "." counter(h4) " ";
+		}
+	}
+	h5 {
+		counter-increment: h5;  
+		&:before {
+			content: counter(h3) "." counter(h4) "." counter(h5) " ";
+		}
+	}
+	h6 {
+		counter-increment: h6;  
+		&:before {
+			content: counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) " ";
+		}
+	}
+	
+	
 	&.page-template-page-library {
 		#resources {
 			#filters {
