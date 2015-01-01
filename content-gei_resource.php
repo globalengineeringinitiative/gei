@@ -55,8 +55,8 @@ foreach ( $types as $type ) {
 			<?php foreach ( $terms as $term ) { ?>
 			<li><a class="btn btn-primary"><?php echo $term->name; ?></a></li>
 			<?php } ?>
-			<li>		<a class="btn btn-default"><?php echo $type->name; ?></a>
-			</li>
+			<li><a class="btn btn-default"><?php echo $type->name; ?></a></li>
 		</ul>
+		
 	</footer><!-- .resource-footer -->
 </div><!-- #post-## -->

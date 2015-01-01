@@ -22,6 +22,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php edit_post_link( __( 'Edit', 'gei' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( __( 'Edit This', 'gei' ), '<p class="edit-link">', '</p>' ); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
