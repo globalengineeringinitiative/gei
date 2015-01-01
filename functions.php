@@ -165,6 +165,120 @@ if( function_exists('acf_add_options_page') ) {
 	
 }
 
+if( function_exists('register_field_group') ):
+
+register_field_group(array (
+	'key' => 'group_54a5ac9e67028',
+	'title' => 'General Options',
+	'fields' => array (
+		array (
+			'key' => 'field_54a5acac72305',
+			'label' => 'Short Title',
+			'name' => 'short_title',
+			'prefix' => '',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 1,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+			'readonly' => 0,
+			'disabled' => 0,
+		),
+	),
+	'location' => array (
+		array (
+			array (
+				'param' => 'options_page',
+				'operator' => '==',
+				'value' => 'acf-options',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+));
+
+register_field_group(array (
+	'key' => 'group_54a2f2c84facc',
+	'title' => 'Library Options',
+	'fields' => array (
+		array (
+			'key' => 'field_54a2f2d8ac370',
+			'label' => 'No Match Title',
+			'name' => 'no_match_title',
+			'prefix' => '',
+			'type' => 'text',
+			'instructions' => 'The title of the error shown when no matches are found.',
+			'required' => 1,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => 'No matching items found',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+			'readonly' => 0,
+			'disabled' => 0,
+		),
+		array (
+			'key' => 'field_54a2f308ac371',
+			'label' => 'No Match Text',
+			'name' => 'no_match_text',
+			'prefix' => '',
+			'type' => 'textarea',
+			'instructions' => 'The content of the error shown when no matches are found.',
+			'required' => 1,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => 'Perhaps there are too many filters selected. Try unselecting some blue tags to get more results.',
+			'placeholder' => '',
+			'maxlength' => '',
+			'rows' => '',
+			'new_lines' => 'wpautop',
+			'readonly' => 0,
+			'disabled' => 0,
+		),
+	),
+	'location' => array (
+		array (
+			array (
+				'param' => 'options_page',
+				'operator' => '==',
+				'value' => 'acf-options',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'left',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+));
+
+endif;
+
 add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
 function special_nav_class($classes, $item){
      if( in_array('current-menu-item', $classes) ){

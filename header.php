@@ -23,7 +23,7 @@
 	<nav id="site-navigation" class="navbar navbar-default navbar-fixed-top" role="navigation">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+				<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><span class="hidden-xs"><?php bloginfo( 'name' ); ?></span><span class="visible-xs-inline"><?php echo get_option( 'options_short_title' ); ?></span></a>
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#primary-menu">
 					<span class="sr-only"><?php _e( 'Primary Menu', 'gei' ); ?></span>
 					<span class="icon-bar"></span>
