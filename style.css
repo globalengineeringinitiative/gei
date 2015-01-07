@@ -5416,6 +5416,29 @@ body {
     counter-increment: h6; }
     body h6:before {
       content: counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) " "; }
+  body blockquote {
+    border: none;
+    background: #777777;
+    color: #fff;
+    padding: 30px;
+    margin: 40px 0 80px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px; }
+    body blockquote:after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 80px;
+      position: absolute;
+      left: 60px;
+      border-style: solid;
+      border-width: 80px 80px 0 0;
+      border-color: #777777 transparent transparent transparent; }
+    body blockquote p {
+      font-family: "Source Sans Pro", sans-serif;
+      font-size: 30px; }
   body .navbar-fixed-top ul.navbar-nav li ul.sub-menu {
     list-style-type: none; }
     body .navbar-fixed-top ul.navbar-nav li ul.sub-menu li {
