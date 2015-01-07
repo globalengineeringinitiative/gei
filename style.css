@@ -5397,8 +5397,6 @@ body {
     -webkit-transition: all, 0.4s;
     -o-transition: all, 0.4s;
     transition: all, 0.4s; }
-  body p {
-    font-size: 18px; }
   body h3 {
     counter-reset: h4;
     counter-increment: h3; }
