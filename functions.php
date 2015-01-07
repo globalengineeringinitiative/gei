@@ -289,5 +289,6 @@ function special_nav_class($classes, $item){
 
 function gei_add_editor_styles() {
     add_editor_style( get_stylesheet_directory_uri() . '/style.css' );
+    add_editor_style( get_stylesheet_directory_uri() . '/editor.css' );
 }
 add_action( 'after_setup_theme', 'gei_add_editor_styles' );
