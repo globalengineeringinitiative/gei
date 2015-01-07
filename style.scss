@@ -120,6 +120,19 @@ body {
 			}
 		}
 	}
+	&.single-gei_resource {
+		#tags {
+			padding-left: 0;
+			margin-bottom: 0;
+			li {
+				list-style-type: none;
+				margin-bottom: 0.5em;
+				&:last-child {
+					margin-bottom: 0.25em;
+				}
+			}
+		}
+	}
 	&.page-template-page-library {
 		#resources {
 			#filters {

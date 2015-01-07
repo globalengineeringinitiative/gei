@@ -5466,6 +5466,14 @@ body {
         padding: 10px 15px; }
     body .navbar-fixed-top ul.navbar-nav li:hover ul.sub-menu {
       display: block; } }
+  body.single-gei_resource #tags {
+    padding-left: 0;
+    margin-bottom: 0; }
+    body.single-gei_resource #tags li {
+      list-style-type: none;
+      margin-bottom: 0.5em; }
+      body.single-gei_resource #tags li:last-child {
+        margin-bottom: 0.25em; }
   body.page-template-page-library #resources #filters h1 {
     font-size: 18px; }
   body.page-template-page-library #resources #filters h2 {

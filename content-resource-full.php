@@ -3,6 +3,14 @@
  * @package Global Engineering Initiative
  */
 ?>
+<?php $terms = wp_get_object_terms( $post->ID, array(
+	'gei_discipline',
+	'gei_module',
+	'gei_region',
+	'gei_skill',
+	'gei_topic',
+) );
+$types = wp_get_object_terms( $post->ID, array( 'gei_type' ) );  $type = $types[0]; ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3' ); ?>>
 	<header class="entry-header">
@@ -34,7 +42,8 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<p>
+		<section class="links">
+			<p>
 		<?php if ( get_field( 'external_url' ) ) : ?>
 			<a href="<?php the_field( 'external_url' ); ?>" target="_blank"><i class="fa fa-globe"></i>  <?php _e( 'Visit Resource Online', 'gei' ); ?></a>
 			<?php if ( get_field( 'file_download_url' ) ) : ?><br /><?php endif; ?>
@@ -61,6 +70,13 @@
 					echo '<i class="fa fa-file-o"></i>';
 				endif; ?> <?php _e( 'Download Resource', 'gei' ); ?></a>
 		<?php endif; ?>
-		</p>
+			</p>
+		</section>
+		<ul id="tags">
+			<?php foreach ( $terms as $term ) { ?>
+			<li><a class="btn btn-primary"><?php echo $term->name; ?></a></li>
+			<?php } ?>
+			<li><a class="btn btn-default"><?php echo $type->name; ?></a></li>
+		</ul>		
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

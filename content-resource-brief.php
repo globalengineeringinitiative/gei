@@ -11,14 +11,12 @@
 	'gei_skill',
 	'gei_topic',
 ) );
-$types = wp_get_object_terms( $post->ID, array( 'gei_type' ) );
+$types = wp_get_object_terms( $post->ID, array( 'gei_type' ) ); $type = $types[0];
 $post_class = 'panel panel-primary ';
 foreach ( $terms as $term ) {
 	$post_class .= $term->slug . ' ';
 }
-foreach ( $types as $type ) {
-	$post_class .= $type->slug . ' ';
-} ?>
+$post_class .= $type->slug . ' '; ?>
 
 <div id="post-<?php the_ID(); ?>" <?php post_class( rtrim ( $post_class ) ); ?>>
 	<div class="panel-heading">
