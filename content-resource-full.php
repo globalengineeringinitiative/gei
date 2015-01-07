@@ -51,9 +51,6 @@
 					    case 'doc':
 					        echo '<i class="fa fa-file-word-o"></i>';
 					    	break;
-					    case 'url':
-					        echo '<i class="fa fa-file-code-o"></i>';
-					    	break;
 					}
 				else :
 					echo '<i class="fa fa-file-o"></i>';

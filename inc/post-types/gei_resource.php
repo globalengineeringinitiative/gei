@@ -309,7 +309,6 @@ array (
 				'xls' => 'Excel Spreadsheet',
 				'ppt' => 'PowerPoint Slideshow',
 				'doc' => 'Word Document',
-				'url' => 'URL',
 			),
 			'default_value' => array (
 			),
