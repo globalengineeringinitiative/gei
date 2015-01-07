@@ -76,7 +76,7 @@ get_header(); ?>
 					'orderby' => 'post_title',
 				) );
 				foreach ( $resources as $post ) {
-					get_template_part( 'content', 'gei_resource' );
+					get_template_part( 'content', 'resource-brief' );
 				} ?>
 				<div id="no-match" class="panel panel-primary">
 					<div class="panel-heading">
