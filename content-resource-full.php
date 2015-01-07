@@ -31,11 +31,16 @@
 
 	<div class="entry-content">
 		<?php the_field( 'summary' ); ?>
+	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+		<p>
 		<?php if ( get_field( 'external_url' ) ) : ?>
-			<p><a href="<?php the_field( 'external_url' ); ?>" target="_blank"><i class="fa fa-globe"></i>  <?php _e( 'Visit Resource Online', 'gei' ); ?></a></p>
+			<a href="<?php the_field( 'external_url' ); ?>" target="_blank"><i class="fa fa-globe"></i>  <?php _e( 'Visit Resource Online', 'gei' ); ?></a>
+			<?php if ( get_field( 'file_download_url' ) ) : ?><br /><?php endif; ?>
 		<?php endif; ?>
 		<?php if ( get_field( 'file_download_url' ) ) : ?>
-			<p><a href="<?php the_field( 'file_download_url' ); ?>" target="_blank">
+			<a href="<?php the_field( 'file_download_url' ); ?>" target="_blank">
 				<?php if ( get_field( 'file_format' ) ) :
 					$format = get_field( 'file_format' );
 					switch( $format ) {
@@ -54,11 +59,8 @@
 					}
 				else :
 					echo '<i class="fa fa-file-o"></i>';
-				endif; ?> <?php _e( 'Download Resource', 'gei' ); ?></a></p>
+				endif; ?> <?php _e( 'Download Resource', 'gei' ); ?></a>
 		<?php endif; ?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php gei_entry_footer(); ?>
+		</p>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
