@@ -23,7 +23,9 @@ body {
 	a {
 		@include transition( all, 0.4s );
 	}
-	
+	p {
+		font-size: $font-size-large;
+	}
 	h3 {
 		counter-reset: h4;
 		counter-increment: h3;
