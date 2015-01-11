@@ -100,8 +100,6 @@ function gei_scripts() {
 	wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' );
 	
 	wp_enqueue_style( 'gei-style', get_template_directory_uri() . '/assets/stylesheets/gei.css', array(), $v );
-
-	//wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/javascripts/bootstrap.js', array( 'jquery' ), '3.3.1', true );
 	
 	wp_enqueue_script( 'fastclick', get_template_directory_uri() . '/assets/javascripts/fastclick.js', array( 'jquery' ), '1.0', true );
 
@@ -119,11 +117,6 @@ function gei_scripts() {
 add_action( 'wp_enqueue_scripts', 'gei_scripts' );
 
 /**
- * Implement the Custom Header feature.
- */
-//require get_template_directory() . '/inc/custom-header.php';
-
-/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
@@ -137,11 +130,6 @@ require get_template_directory() . '/inc/extras.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-require get_template_directory() . '/inc/jetpack.php';
 
 /**
  * Initialize post types.

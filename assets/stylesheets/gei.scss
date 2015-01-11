@@ -6,14 +6,90 @@ $primary-color: #1FABDD;
 $header-font: "Raleway", sans-serif;
 $body-font: "Source Sans Pro", sans-serif;
 
+// breakpoints
+$phone: 320px;
+
 body {
 	padding-top: 50px;
+	#masthead {
+		@include outer-container(100%);
+		top: 0;
+		height: auto;
+		width: 100%;
+		position: fixed;
+		background: #f8f8f8;
+		border-bottom: solid 1px #e7e7e7;
+		nav {
+			ul {
+				list-style: none;
+				padding: 7px 0;
+				li {
+					display: list-item;
+					font-size: 14px;
+					font-family: $header-font;
+					font-weight: 800;
+					line-height: 20px;
+					text-transform: uppercase;
+					padding: 7px 10px 0;
+					a {
+						color: #777;
+						text-decoration: none;
+						&:hover {
+							color: #1FABDD;
+						}
+					}
+					> ul {
+						list-style: none;
+						padding: 0 10px;
+						li {
+							display: list-item;
+						}
+					}
+				}
+			}
+		}
+		@include media(768px) {
+			.site-branding {
+				float: left;
+			}
+			.menu-toggle {
+				display: none;
+			}
+			nav {
+				ul {
+					float: right;
+					li {
+						display: inline;
+						padding: 10px 15px 10px 0;
+						> ul {
+							display: none;
+							position: fixed;
+							background: #f8f8f8;
+							border-top: solid 1px #f8f8f8;
+							border-right: solid 1px #e7e7e7;
+							border-bottom: solid 1px #e7e7e7;
+							border-left: solid 1px #e7e7e7;
+							li {
+								padding: 10px 15px;
+							}
+						}
+						&:hover {
+							> ul {
+								display: block;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 	&.admin-bar {
 		padding-top: 50px + 32px;
-		.navbar-fixed-top {
+		#masthead {
 			top: 32px;
 		}
 	}
+	.screen-reader-text { display: none; }
 	a {
 		@include transition( all, 0.4s );
 		color: $primary-color;
@@ -76,61 +152,6 @@ body {
 		p {
 			font-family: $body-font;
 			font-size: 30px;
-		}
-	}
-	nav {
-		ul {
-			li {
-				font-size: 14px;
-				font-family: $header-font;
-				font-weight: 800;
-				line-height: 20px;
-				text-transform: uppercase;
-				padding: 10px 15px 10px 0;
-				a {
-					color: #777;
-					&:hover {
-						color: #1FABDD;
-					}
-				}
-				ul.sub-menu {
-					list-style-type: none;
-					li {
-						font-size: 14px;
-						font-family: $header-font;
-						font-weight: 800;
-						line-height: 20px;
-						text-transform: uppercase;
-						padding: 10px 15px 10px 0;
-						a {
-							color: #777;
-							&:hover {
-								color: #1FABDD;
-							}
-						}
-					}
-				}
-				@media (min-width: 768px) {
-					ul.sub-menu {
-						display: none;
-						position: fixed;
-						-webkit-padding-start: 0;
-						background: #f8f8f8;
-						border-top: solid 1px #f8f8f8;
-						border-right: solid 1px #e7e7e7;
-						border-bottom: solid 1px #e7e7e7;
-						border-left: solid 1px #e7e7e7;
-						li {
-							padding: 10px 15px;
-						}
-					}
-					&:hover {
-						ul.sub-menu {
-							display: block;
-						}
-					}
-				}
-			}
 		}
 	}
 	&.single-gei_resource {

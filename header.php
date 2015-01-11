@@ -19,25 +19,17 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
-	<a class="sr-only" href="#content"><?php _e( 'Skip to content', 'gei' ); ?></a>
-	<nav id="site-navigation" class="navbar navbar-default navbar-fixed-top" role="navigation">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><span class="hidden-sm hidden-xs"><?php bloginfo( 'name' ); ?></span><span class="visible-sm-inline visible-xs-inline"><?php echo get_option( 'options_short_title' ); ?></span></a>
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#primary-menu">
-					<span class="sr-only"><?php _e( 'Primary Menu', 'gei' ); ?></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-			</div>
-			<?php wp_nav_menu( array(
-				'theme_location' => 'primary',
-				'container_class' => 'collapse navbar-collapse',
-				'container_id' => 'primary-menu',
-				'menu_class' => 'nav navbar-nav  navbar-right',
-			) ); ?>
-		</div>
-	</nav><!-- #site-navigation -->
+	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'gei' ); ?></a>
+	<header id="masthead" class="site-header" role="banner">
+		<div class="site-branding">
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+		</div><!-- .site-branding -->
+
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><?php _e( 'Primary Menu', 'gei' ); ?></button>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+		</nav><!-- #site-navigation -->
+	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
