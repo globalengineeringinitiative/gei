@@ -1,5 +1,10 @@
 @import 'bourbon';
-@import 'bootstrap';
+@import 'neat';
+@import 'reset';
+
+$primary-color: #1FABDD;
+$header-font: "Raleway", sans-serif;
+$body-font: "Source Sans Pro", sans-serif;
 
 body {
 	padding-top: 50px;
@@ -11,9 +16,16 @@ body {
 	}
 	a {
 		@include transition( all, 0.4s );
+		color: $primary-color;
+		&:hover, &:active {
+			color: lighten($primary-color, 10%);
+		}
 	}
-	p {
-		//font-size: $font-size-large;
+	p, li {
+		font-family: $body-font;
+	}
+	h1, h2, h3, h4, h5, h6 {
+		font-family: $header-font;
 	}
 	h3 {
 		counter-reset: h4;
@@ -44,7 +56,7 @@ body {
 	}
 	blockquote {
 		border: none;
-		background: $gray-light;
+		background: #eee;
 		color: #fff;
 		padding: 30px;
 		margin: 40px 0 80px;
@@ -59,43 +71,55 @@ body {
 			left: 60px;
 			border-style: solid;
 			border-width: 80px 80px 0 0;
-			border-color: $gray-light transparent transparent transparent;
+			border-color: #eee transparent transparent transparent;
 		}
 		p {
-			font-family: $font-family-sans-serif;
-			font-size: $font-size-h2;
+			font-family: $body-font;
+			font-size: 30px;
 		}
 	}
-	.navbar-fixed-top {
-		ul.navbar-nav {
+	nav {
+		ul {
 			li {
+				font-size: 14px;
+				font-family: $header-font;
+				font-weight: 800;
+				line-height: 20px;
+				text-transform: uppercase;
+				padding: 10px 15px 10px 0;
+				a {
+					color: #777;
+					&:hover {
+						color: #1FABDD;
+					}
+				}
 				ul.sub-menu {
 					list-style-type: none;
 					li {
-						font-size: $font-size-base;
-						font-family: $headings-font-family;
-						font-weight: $headings-font-weight;
-						line-height: $line-height-computed;
+						font-size: 14px;
+						font-family: $header-font;
+						font-weight: 800;
+						line-height: 20px;
 						text-transform: uppercase;
 						padding: 10px 15px 10px 0;
 						a {
-							color: $navbar-default-link-color;
+							color: #777;
 							&:hover {
-								color: $navbar-default-link-hover-color;
+								color: #1FABDD;
 							}
 						}
 					}
 				}
-				@media (min-width: $grid-float-breakpoint) {
+				@media (min-width: 768px) {
 					ul.sub-menu {
 						display: none;
 						position: fixed;
 						-webkit-padding-start: 0;
-						background: $navbar-default-bg;
-						border-top: solid 1px $navbar-default-bg;
-						border-right: solid 1px $navbar-default-border;
-						border-bottom: solid 1px $navbar-default-border;
-						border-left: solid 1px $navbar-default-border;
+						background: #f8f8f8;
+						border-top: solid 1px #f8f8f8;
+						border-right: solid 1px #e7e7e7;
+						border-bottom: solid 1px #e7e7e7;
+						border-left: solid 1px #e7e7e7;
 						li {
 							padding: 10px 15px;
 						}
@@ -125,8 +149,8 @@ body {
 	&.page-template-page-library {
 		#resources {
 			#filters {
-				h1 { font-size: $font-size-large; }
-				h2 { font-size: $font-size-base; }
+				h1 { font-size: 18px; }
+				h2 { font-size: 14px; }
 				.show-filter {
 					cursor: pointer;
 					.glyphicon {
@@ -154,8 +178,8 @@ body {
 			#isotope {
 				.panel {
 					width: 100%;
-					h1 { font-size: $font-size-large; }
-					h2 { font-size: $font-size-base; }
+					h1 { font-size: 18px; }
+					h2 { font-size: 14px; }
 					#tags {
 						padding-left: 0;
 						margin-bottom: 0;
