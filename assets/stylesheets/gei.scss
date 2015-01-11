@@ -1,16 +1,5 @@
-/*
-Theme Name: Global Engineering Initiative
-Theme URI: http://globalengineeringinitiative.com/
-Author: Leilani Graham-Laidlaw & Ned Zimmerman
-Description: Theme for Engineers Without Borders' Global Engineering Initiative.
-Version: 1.0.
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: gei
-*/
-
 @import 'bourbon';
-@import 'assets/stylesheets/bootstrap';
+@import 'bootstrap';
 
 body {
 	padding-top: 50px;
