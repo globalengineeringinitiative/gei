@@ -10,18 +10,18 @@ $link-color: $primary-color;
 $menu-background: #f8f8f8;
 $menu-link-color: #777;
 $menu-link-active-color: lighten( $link-color, 10% );
-$header-font: "Raleway", sans-serif;
-$body-font-sans: "Source Sans Pro", sans-serif;
-$body-font-serif: "Alegreya", serif;
+$header-font: "Raleway", "Helvetica", "Calibri", "Arial", sans-serif;
+$body-font-sans: "Source Sans Pro", "Helvetica", "Calibri", "Arial", sans-serif;
+$body-font-serif: "Alegreya", "Cambria", "Georgia", "Times New Roman", serif;
 
 // breakpoints
-$tablet: 768px;
-$desktop: 992px;
-$widescreen: 1200px;
+$tablet: em(768px);
+$desktop: em(992px);
+$widescreen: em(1200px);
 
 // vars
-$padding-vertical: 7px;
-$padding-horizontal: 14px;
+$padding-vertical: em(7px);
+$padding-horizontal: em(14px);
 
 // type
 
@@ -36,15 +36,15 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 800;
 }
 h1 {
-	font: 800 2.285714286em $header-font;
+	font: 800 em(32px) $header-font;
 	margin: 0.8em 0;
 }
 h2 {
-	font: 600 1.714285714em $header-font;
+	font: 800 em(24px) $header-font;
 	margin: 0.8em 0;
 }
 h3 {
-	font: 800 1.285714286em $header-font;
+	font: 800 em(18px) $header-font;
 	margin: 0.8em 0;
 	counter-reset: h4;
 	counter-increment: h3;
@@ -53,7 +53,7 @@ h3 {
 	}
 }
 h4 {
-	font: 800 1.142857143em $header-font;
+	font: 800 em(16px) $header-font;
 	margin: 0.8em 0;
 	counter-reset: h5;
 	counter-increment: h4;	
@@ -62,7 +62,7 @@ h4 {
 	}
 }
 h5 {
-	font: 800 1em $header-font;
+	font: 700 em(16px) $header-font;
 	margin: 0.8em 0;
 	counter-reset: h6;
 	counter-increment: h5;	
@@ -71,7 +71,7 @@ h5 {
 	}
 }
 h6 {
-	font: 700 1em $header-font;
+	font: 700 em(14px) $header-font;
 	margin: 0.8em 0;
 	counter-increment: h6;	
 	&:before {
@@ -100,25 +100,25 @@ blockquote {
 	border: none;
 	background: $primary-color;
 	color: $white;
-	padding: 30px;
+	padding: em(30px);
 	margin: 1em 0 em(60px)+1em;
-	@include border-top-radius( 20px );
-	@include border-bottom-radius( 20px );
+	@include border-top-radius( em(20px) );
+	@include border-bottom-radius( em(20px) );
 	&:after {
 		content: '';
 		display: block;
-		width: 80px;
-		height: 80px;
+		width: em(80px);
+		height: em(80px);
 		position: absolute;
-		margin-top: 10px;
-		margin-left: 60px;
+		margin-top: em(10px);
+		margin-left: em(60px);
 		border-style: solid;
-		border-width: 80px 80px 0 0;
+		border-width: em(80px) em(80px) 0 0;
 		border-color: $primary-color transparent transparent transparent;
 	}
 	p {
 		font-family: $body-font-sans;
-		font-size: 2em;
+		font-size: em(32px);
 		font-weight: 600;
 		&:last-child {
 			margin-bottom: 0;
@@ -206,11 +206,11 @@ a {
 // structure
 
 body {
-	padding-top: 36px;
+	padding-top: em(36px);
 	#masthead {
 		@include outer-container(100%);
 		top: 0;
-		min-height: 36px;
+		min-height: em(36px);
 		height: auto;
 		width: 100%;
 		position: fixed;
@@ -221,7 +221,7 @@ body {
 			padding: $padding-vertical $padding-horizontal;
 			h1 {
 				font-family: $header-font;
-				font-size: 18px;
+				font-size: em(18px);
 				font-weight: 800;
 				text-transform: uppercase;
 				margin: 0;
@@ -269,7 +269,7 @@ body {
 				list-style: none;
 				padding: 0 0 $padding-vertical;
 				li {
-					font-size: 16px;
+					font-size: em(16px);
 					font-family: $header-font;
 					font-weight: 800;
 					line-height: 20px;
@@ -324,7 +324,7 @@ body {
 	}
 	@include media($tablet) {
 		#masthead {
-			height: 36px;
+			height: em(36px);
 			.site-branding {
 				float: left;
 				h1 {
@@ -352,7 +352,7 @@ body {
 						> ul {
 							display: none;
 							position: fixed;
-							margin-top: $padding-vertical - 1;
+							margin-top: $padding-vertical;
 							margin-left: -1 * $padding-horizontal;
 							padding: 0 $padding-horizontal $padding-vertical;
 							background: $menu-background;
