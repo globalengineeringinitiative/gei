@@ -10,15 +10,13 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer col-md-8 col-md-offset-2" role="contentinfo">
+	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a> &copy; 2014&ndash;<?php echo date( 'Y' ); ?>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><span class="desktop"><?php bloginfo( 'name' ); ?></span><span class="mobile"><?php echo get_option( 'options_short_title' ); ?></span></a> &copy; 2014&ndash;<?php echo date( 'Y' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-<script>jQuery('.carousel').carousel()</script>
-
 </body>
 </html>

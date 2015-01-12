@@ -1,0 +1,72 @@
+body {
+	&.admin-bar {
+		padding-top: 35px + 32px;
+		#masthead {
+			top: 32px;
+		}
+	}	
+	.screen-reader-text { display: none; }
+	&.single-gei_resource {
+		#tags {
+			padding-left: 0;
+			margin-bottom: 0;
+			li {
+				list-style-type: none;
+				margin-bottom: 0.5em;
+				&:last-child {
+					margin-bottom: 0.25em;
+				}
+			}
+		}
+	}
+	&.page-template-page-library {
+		#resources {
+			#filters {
+				h1 { font-size: 18px; }
+				h2 { font-size: 14px; }
+				.show-filter {
+					cursor: pointer;
+					.glyphicon {
+						top: 3px;
+						left: 2px;
+						@include transition(all, 0.4s);
+					}
+					&.active {
+						.glyphicon {
+							@include transform(rotate(180deg));
+						}
+					}
+				}
+				.button-group {
+					display: none;
+					&.active { display: block; }
+					padding-left: 0;
+					li {
+						list-style-type: none;
+						padding-bottom: 0.5em;
+					}
+				}
+			}
+			#no-match { display: none; }
+			#isotope {
+				.panel {
+					width: 100%;
+					h1 { font-size: 18px; }
+					h2 { font-size: 14px; }
+					#tags {
+						padding-left: 0;
+						margin-bottom: 0;
+						li {
+							list-style-type: none;
+							margin-bottom: 0.5em;
+							&:last-child {
+								margin-bottom: 0.25em;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+}

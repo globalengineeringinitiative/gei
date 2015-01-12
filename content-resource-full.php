@@ -12,7 +12,7 @@
 ) );
 $types = wp_get_object_terms( $post->ID, array( 'gei_type' ) );  $type = $types[0]; ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 		<?php if ( get_field( 'subtitle' ) ) : ?>
