@@ -7,6 +7,7 @@
 
 <div id="secondary" role="complementary">
 	<h1><?php _e( 'Filter', 'gei' ); ?></h1>
+	<p>Pick a module, skill or topic to get started!</p>
 	<h2><a class="show-filter" data-toggle="collapse" data-target="#module"><?php _e( 'Module', 'gei' ); ?> <i class="fa fa-angle-up"></i></a></h2>
 	<ul id="module" class="filters collapse" data-filter-group="module">
 		<?php $terms = get_terms( 'gei_module' );
