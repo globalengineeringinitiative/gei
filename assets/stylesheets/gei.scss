@@ -6,8 +6,8 @@
 $primary: #00ADEE;
 $primary-dark: #0075A1;
 $primary-light: #19C0FF;
-$secondary-color: #EE7C00;
-$secondary-light: lighten($secondary-color, 10%);
+$secondary: #EE7C00;
+$secondary-light: lighten($secondary, 10%);
 $black: #333;
 $dark-grey: #4B5B65;
 $light-grey: lighten($dark-grey, 62%);
@@ -318,21 +318,23 @@ body {
 			@include span-columns(12);
 			#isotope {
 				.resource {
-					width: 100%;
-					border: solid 2px $primary;
+					@include span-columns(12 of 12);
+					background: $light-grey;
+					border-left: solid 2px $primary;
 					&#null {
 						display: none;
-						border: solid 2px $secondary-color;
+						border-left: solid 2px $secondary;
 						&:hover {
-							border: solid 2px $secondary-light;
+							border-left: solid 2px $secondary-light;
 						}
 					}
 					&:hover {
-						border: solid 2px $primary-light;
+						border-left: solid 2px $secondary;
 					}
-					@include border-top-radius( em(16px) );
-					@include border-bottom-radius( em(16px) );
-					padding: 0 $padding-horizontal $padding-vertical * 2;
+					padding-top: 0;
+					padding-right: $padding-horizontal;
+					padding-bottom: $padding-vertical * 2;
+					padding-left: $padding-horizontal - em(2px);
 					margin: 0 0 em(18px);
 					h1 { font-size: em(18px); }
 					h2 { font-size: em(14px); }
@@ -356,23 +358,27 @@ body {
 			h1 { font-size: em(18px); }
 			h2 {
 				font-size: em(14px);
+				font-weight: 500;
 				text-transform: uppercase;
 				a.show-filter {
 					cursor: pointer;
 					color: $menu-link-color;
-					@include transition( all 0.3s );
+					@include transition( all 0s ease-in );
 					.fa {
 						font-size: em(18px);
-						font-weight: 800;
-						@include transition( all 0.3s );
-						@include transform( rotate(180deg) );
+						@include transition( transform 0.3s, color 0s );
+						@include transform( rotate(90deg) );
 					}
 					&:hover {
-						color: $menu-link-active-color;
+						color: $secondary;
+						.fa {
+							color: $secondary;
+
+						}
 					}
 					&[aria-expanded="true"] {
 						.fa {
-							//@include transform( rotate(180deg) );
+							@include transform( rotate(180deg) );
 						}
 					}
 				}
@@ -399,19 +405,19 @@ body {
 					margin: 0 0 em(8px);
 					a {
 						display: inline-block;
-						padding: $padding-vertical / 2 $padding-horizontal / 2;
+						padding: $padding-vertical / 2 $padding-horizontal / 2 $padding-vertical / 2 ( $padding-horizontal / 2 ) - em(2px);
 						background: $light-grey;
-						@include border-top-radius( em(8px) );
-						@include border-bottom-radius( em(8px) );
+						border-left: 2px solid $light-grey;
 						font: normal em(14px) $body-font-sans;
 						cursor: pointer;
 						color: $menu-link-color;
 						&:hover {
-							color: $secondary-color;
+							color: $link-active-color;
+							border-left: 2px solid $secondary;
 						}
 						&.active {
 							color: $white;
-							background: $secondary-color;
+							background: $primary;
 						}
 					}
 				}
@@ -482,18 +488,26 @@ body {
 			}
 		}
 		#content {
-			@include direction-context(right-to-left) {
-				#primary {
-					@include span-columns(7);
+			#primary {
+				@include span-columns(8);
+				@include shift(2);
+			}
+		}
+		&.page-template-page-library, .single-gei_resource {
+			#content {
+				@include direction-context(right-to-left) {
+					#primary {
+						@include span-columns(7);
+						@include shift(1);
+					}
+				}
+				#secondary {
+					margin-top: em(64px);
+					@include span-columns(3);
 					@include shift(1);
 				}
 			}
-			#secondary {
-				margin-top: em(64px);
-				@include span-columns(3);
-				@include shift(1);
-			}
-		}
+		}	
 		#colophon {
 			.site-info {
 				@include span-columns(9);
@@ -513,16 +527,24 @@ body {
 			}
 		}
 		#content {
-			@include direction-context(right-to-left) {
-				#primary {
-					@include span-columns(8);
+			#primary {
+				@include span-columns(9);
+				@include shift(1.5);
+			}
+		}
+		&.page-template-page-library, .single-gei_resource {
+			#content {
+				@include direction-context(right-to-left) {
+					#primary {
+						@include span-columns(8);
+						@include shift(0.5);
+					}
+				}
+				#secondary {
+					margin-top: em(64px);
+					@include span-columns(3);
 					@include shift(0.5);
 				}
-			}
-			#secondary {
-				margin-top: em(64px);
-				@include span-columns(3);
-				@include shift(0.5);
 			}
 		}
 	}
