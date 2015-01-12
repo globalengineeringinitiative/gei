@@ -86,13 +86,16 @@ p {
 ul, ol {
 	margin-bottom: 1em;
 	padding-left: 1.2em;
+	li {
+		font-family: $body-font-serif;
+		font-weight: 400;
+		ul, ol {
+			margin-bottom: 0;
+		}
+	}
 }
 ul { list-style: disc; }
 ol { list-style: decimal; }
-li {
-	font-family: $body-font-serif;
-	font-weight: 400;
-}
 blockquote {
 	border: none;
 	background: $primary-color;
