@@ -93,7 +93,7 @@ add_action( 'widgets_init', 'gei_widgets_init' );
  * Enqueue scripts and styles.
  */
 function gei_scripts() {
-	$v = 20150111;
+	$v = 20150112;
 	
 	wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic|Alegreya:400italic,700italic,900italic,400,700,900|Raleway:400,300,200,100,500,600,700,800,900' );
 	
@@ -105,8 +105,6 @@ function gei_scripts() {
 
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/javascripts/bootstrap.min.js', array( 'jquery' ), '3.3.1', true );
 	
-	//wp_enqueue_script( 'navigation', get_template_directory_uri() . '/assets/javascripts/navigation.min.js', array( 'jquery' ), '1.0', true );
-
 	wp_enqueue_script( 'gei', get_template_directory_uri() . '/assets/javascripts/gei.min.js', array( 'jquery' ), $v, true );
 	
 	if ( is_page( __( 'library', 'gei' ) ) ) {
@@ -275,7 +273,7 @@ endif;
 
 function gei_add_editor_styles() {
     add_editor_style( get_stylesheet_directory_uri() . '/assets/stylesheets/gei.css' );
-    add_editor_style( get_stylesheet_directory_uri() . '/editor.css' );
+    add_editor_style( get_stylesheet_directory_uri() . '/assets/stylesheets/editor.css' );
 }
 add_action( 'after_setup_theme', 'gei_add_editor_styles' );
 
