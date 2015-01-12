@@ -47,25 +47,7 @@ body {
 					}
 				}
 			}
-			#no-match { display: none; }
-			#isotope {
-				.panel {
-					width: 100%;
-					h1 { font-size: 18px; }
-					h2 { font-size: 14px; }
-					#tags {
-						padding-left: 0;
-						margin-bottom: 0;
-						li {
-							list-style-type: none;
-							margin-bottom: 0.5em;
-							&:last-child {
-								margin-bottom: 0.25em;
-							}
-						}
-					}
-				}
-			}
+			#null { display: block; }
 		}
 	}
 

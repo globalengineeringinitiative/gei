@@ -3,13 +3,17 @@
 @import 'reset';
 @import 'shame';
 
-$primary-color: #00ADEE;
+$primary: #00ADEE;
+$primary-dark: #0075A1;
+$primary-light: #19C0FF;
+$secondary-color: #EE7C00;
+$secondary-light: lighten($secondary-color, 10%);
 $black: #333;
 $dark-grey: #4B5B65;
-$light-grey: lighten(#4B5B65, 62%);
+$light-grey: lighten($dark-grey, 62%);
 $white: #ffffff;
-$link-color: $primary-color;
-$link-active-color: lighten( $link-color, 10% );
+$link-color: $primary;
+$link-active-color: $primary-light;
 $menu-background: $light-grey;
 $menu-link-color: $dark-grey;
 $menu-link-active-color: $link-active-color;
@@ -101,7 +105,7 @@ ul { list-style: disc; }
 ol { list-style: decimal; }
 blockquote {
 	border: none;
-	background: $primary-color;
+	background: $primary;
 	color: $white;
 	padding: em(30px);
 	margin: 1em 0 em(60px)+1em;
@@ -117,7 +121,7 @@ blockquote {
 		margin-left: em(60px);
 		border-style: solid;
 		border-width: em(80px) em(80px) 0 0;
-		border-color: $primary-color transparent transparent transparent;
+		border-color: $primary transparent transparent transparent;
 	}
 	p {
 		font-family: $body-font-sans;
@@ -198,7 +202,7 @@ table {
 	}
 }
 a {
-	@include transition( all, 0.35s );
+	@include transition( all, 0.3s );
 	color: $link-color;
 	text-decoration: none;
 	&:hover, &:active {
@@ -266,7 +270,7 @@ body {
 				position: relative;
 				height: 0;
 				overflow: hidden;
-				@include transition( height 0.35s, visibility 0.35s );
+				@include transition( height 0.3s, visibility 0.3s );
 			}
 			ul {
 				list-style: none;
@@ -287,7 +291,7 @@ body {
 					}
 					&.current-menu-item, &.current_page_item {
 						a {
-							color: $menu-link-active-color;
+							color: $link-color;
 							&:hover, &:active {
 								color: $menu-link-active-color;
 							}
@@ -312,6 +316,101 @@ body {
 		padding: $padding-vertical $padding-horizontal;
 		#primary {
 			@include span-columns(12);
+			#isotope {
+				.resource {
+					width: 100%;
+					border: solid 2px $primary;
+					&#null {
+						display: none;
+						border: solid 2px $secondary-color;
+						&:hover {
+							border: solid 2px $secondary-light;
+						}
+					}
+					&:hover {
+						border: solid 2px $primary-light;
+					}
+					@include border-top-radius( em(16px) );
+					@include border-bottom-radius( em(16px) );
+					padding: 0 $padding-horizontal $padding-vertical * 2;
+					margin: 0 0 em(18px);
+					h1 { font-size: em(18px); }
+					h2 { font-size: em(14px); }
+					@include transition( all 0.3s );
+					#tags {
+						padding-left: 0;
+						margin-bottom: 0;
+						li {
+							list-style-type: none;
+							margin-bottom: 0.5em;
+							&:last-child {
+								margin-bottom: 0.25em;
+							}
+						}
+					}
+				}
+			}
+		}
+		#secondary {
+			@include span-columns(12);
+			h1 { font-size: em(18px); }
+			h2 {
+				font-size: em(14px);
+				text-transform: uppercase;
+				a.show-filter {
+					cursor: pointer;
+					color: $menu-link-color;
+					@include transition( all 0.3s );
+					.fa {
+						font-size: em(18px);
+						font-weight: 800;
+						@include transition( all 0.3s );
+					}
+					&:hover {
+						color: $menu-link-active-color;
+					}
+					&[aria-expanded="true"] {
+						.fa {
+							@include transform( rotate(180deg) );
+						}
+					}
+				}
+			}
+			ul.filters {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				&.collapse {
+					display: none;
+					visibility: hidden;
+					&.in {
+						display: block;
+						visibility: visible;
+					}
+				}
+				&.collapsing {
+					position: relative;
+					height: 0;
+					overflow: hidden;
+					@include transition( height 0.3s, visibility 0.3s );
+				}
+				li {
+					margin: 0 0 em(8px);
+					a {
+						display: inline-block;
+						padding: $padding-vertical / 2 $padding-horizontal / 2;
+						background: $light-grey;
+						@include border-top-radius( em(8px) );
+						@include border-bottom-radius( em(8px) );
+						font: 600 em(14px) $body-font-sans;
+						cursor: pointer;
+						color: $menu-link-color;
+						&:hover {
+							color: $menu-link-active-color;
+						}
+					}
+				}
+			}
 		}
 	}
 	#colophon {
@@ -330,10 +429,6 @@ body {
 			height: em(36px);
 			.site-branding {
 				float: left;
-				h1 {
-					.desktop { display: inline; }
-					.mobile { display: none; }
-				}
 			}
 			nav {
 				#menu-toggle {
@@ -382,9 +477,16 @@ body {
 			}
 		}
 		#content {
-			#primary {
-				@include span-columns(9);
-				@include shift(1.5);
+			@include direction-context(right-to-left) {
+				#primary {
+					@include span-columns(7);
+					@include shift(1);
+				}
+			}
+			#secondary {
+				margin-top: em(64px);
+				@include span-columns(3);
+				@include shift(1);
 			}
 		}
 		#colophon {
@@ -397,10 +499,25 @@ body {
 		}
 	}
 	@include media($desktop) {
+		#masthead {
+			.site-branding {
+				h1 {
+					.desktop { display: inline; }
+					.mobile { display: none; }
+				}
+			}
+		}
 		#content {
-			#primary {
-				@include span-columns(8);
-				@include shift(2);
+			@include direction-context(right-to-left) {
+				#primary {
+					@include span-columns(8);
+					@include shift(0.5);
+				}
+			}
+			#secondary {
+				margin-top: em(64px);
+				@include span-columns(3);
+				@include shift(0.5);
 			}
 		}
 	}

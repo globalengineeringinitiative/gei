@@ -12,7 +12,7 @@
 	'gei_topic',
 ) );
 $types = wp_get_object_terms( $post->ID, array( 'gei_type' ) ); $type = $types[0];
-$post_class = 'panel panel-primary ';
+$post_class = 'resource ';
 foreach ( $terms as $term ) {
 	$post_class .= $term->slug . ' ';
 }
