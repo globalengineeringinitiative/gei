@@ -365,13 +365,14 @@ body {
 						font-size: em(18px);
 						font-weight: 800;
 						@include transition( all 0.3s );
+						@include transform( rotate(180deg) );
 					}
 					&:hover {
 						color: $menu-link-active-color;
 					}
 					&[aria-expanded="true"] {
 						.fa {
-							@include transform( rotate(180deg) );
+							//@include transform( rotate(180deg) );
 						}
 					}
 				}
@@ -402,11 +403,15 @@ body {
 						background: $light-grey;
 						@include border-top-radius( em(8px) );
 						@include border-bottom-radius( em(8px) );
-						font: 600 em(14px) $body-font-sans;
+						font: normal em(14px) $body-font-sans;
 						cursor: pointer;
 						color: $menu-link-color;
 						&:hover {
-							color: $menu-link-active-color;
+							color: $secondary-color;
+						}
+						&.active {
+							color: $white;
+							background: $secondary-color;
 						}
 					}
 				}
