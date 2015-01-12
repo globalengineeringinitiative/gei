@@ -5,11 +5,14 @@
 
 $primary-color: #00ADEE;
 $black: #333;
+$dark-grey: #4B5B65;
+$light-grey: lighten(#4B5B65, 62%);
 $white: #ffffff;
 $link-color: $primary-color;
-$menu-background: #f8f8f8;
-$menu-link-color: #4B5B65;
-$menu-link-active-color: lighten( $link-color, 10% );
+$link-active-color: lighten( $link-color, 10% );
+$menu-background: $light-grey;
+$menu-link-color: $dark-grey;
+$menu-link-active-color: $link-active-color;
 $header-font: "Raleway", "Helvetica", "Calibri", "Arial", sans-serif;
 $body-font-sans: "Source Sans Pro", "Helvetica", "Calibri", "Arial", sans-serif;
 $body-font-serif: "Alegreya", "Cambria", "Georgia", "Times New Roman", serif;
@@ -232,7 +235,7 @@ body {
 						font: inherit;
 					}
 					&:hover {
-						color: $primary-color;
+						color: $link-active-color;
 					}
 				}
 				.desktop { display: none; }
