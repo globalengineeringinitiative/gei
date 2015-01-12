@@ -93,7 +93,7 @@ add_action( 'widgets_init', 'gei_widgets_init' );
  * Enqueue scripts and styles.
  */
 function gei_scripts() {
-	$v = 20150112;
+	$v = 201501122;
 	
 	wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic|Alegreya:400italic,700italic,900italic,400,700,900|Raleway:400,300,200,100,500,600,700,800,900' );
 	
@@ -280,5 +280,6 @@ add_action( 'after_setup_theme', 'gei_add_editor_styles' );
 add_filter('embed_oembed_html', 'gei_embed_oembed_html', 99, 4);
 
 function gei_embed_oembed_html($html, $url, $attr, $post_id) {
+	$html = str_replace('?feature=oembed', '?feature=oembed&controls=1&showinfo=0&modestbranding', $html);
 	return '<div class="embed-responsive embed-responsive-16by9">' . $html . '</div>';
 }

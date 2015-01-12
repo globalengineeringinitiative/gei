@@ -313,7 +313,7 @@ body {
 	}
 	#colophon {
 		@include outer-container;
-		padding: $padding-vertical $padding-horizontal;
+		padding: $padding-vertical $padding-horizontal 1em;
 		.site-info {
 			@include span-columns(12);
 			font-family: $body-font-sans;
