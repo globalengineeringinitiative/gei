@@ -528,8 +528,8 @@ body {
 		}
 		#content {
 			#primary {
-				@include span-columns(9);
-				@include shift(1.5);
+				@include span-columns(8);
+				@include shift(2);
 			}
 		}
 		&.page-template-page-library, .single-gei_resource {
