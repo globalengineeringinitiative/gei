@@ -29,7 +29,6 @@
 	    if ( $(this).hasClass('active') ) {
 		    $(this).removeClass('active');
 	    } else {
-		    $(this).parent().parent().children().children('a').removeClass('active');
 		    $(this).addClass('active');
 	    }
 	    load_posts();
