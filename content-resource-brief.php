@@ -61,4 +61,4 @@ $post_class .= $type->slug . ' '; ?>
 		</ul>
 		
 	</footer><!-- .resource-footer -->
-</div><!-- #post-## -->
+</div>

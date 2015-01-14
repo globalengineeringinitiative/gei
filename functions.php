@@ -109,9 +109,9 @@ function gei_scripts() {
 	
 	if ( is_page( __( 'library', 'gei' ) ) ) {
 		
-		//wp_enqueue_script( 'isotope', get_template_directory_uri() . '/assets/javascripts/isotope.pkgd.min.js', array( 'jquery' ), '2.1', true );
+		wp_enqueue_script( 'isotope', get_template_directory_uri() . '/assets/javascripts/isotope.pkgd.min.js', array( 'jquery' ), '2.1', true );
 		
-		//wp_enqueue_script( 'gei-library', get_template_directory_uri() . '/assets/javascripts/gei-library.min.js', array( 'jquery' ), $v, true );
+		wp_enqueue_script( 'gei-library', get_template_directory_uri() . '/assets/javascripts/gei-library.min.js', array( 'jquery' ), $v, true );
 		
 	}
 

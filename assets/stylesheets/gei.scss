@@ -322,7 +322,6 @@ body {
 					background: $light-grey;
 					border-left: solid 2px $primary;
 					&#null {
-						display: none;
 						border-left: solid 2px $secondary;
 						&:hover {
 							border-left: solid 2px $secondary-light;
@@ -358,15 +357,16 @@ body {
 			h1 { font-size: em(18px); }
 			h2 {
 				font-size: em(14px);
-				font-weight: 500;
+				font-weight: 600;
 				text-transform: uppercase;
 				a.show-filter {
 					cursor: pointer;
 					color: $menu-link-color;
-					@include transition( all 0s ease-in );
+					@include transition( all 0.3s );
 					.fa {
 						font-size: em(18px);
-						@include transition( transform 0.3s, color 0s );
+						font-weight: 600;
+						@include transition( all 0.3s );
 						@include transform( rotate(90deg) );
 					}
 					&:hover {
