@@ -148,6 +148,11 @@ require get_template_directory() . '/inc/taxonomies/gei_skill.php';
 require get_template_directory() . '/inc/taxonomies/gei_topic.php';
 require get_template_directory() . '/inc/taxonomies/gei_type.php';
 
+/**
+ * Initialize API.
+ */
+require get_template_directory() . '/inc/api.php';
+
 
 // shame
 
