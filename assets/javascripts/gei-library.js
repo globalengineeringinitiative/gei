@@ -5,9 +5,18 @@
 		layoutMode: 'vertical',
 	});
 	var load_posts = function() {
-	    var module = $('#module li a.active').attr('data-filter');
-	    var skill = $('#skill li a.active').attr('data-filter');
-	    var topic = $('#topic li a.active').attr('data-filter');
+	    var module = [];
+	    $('#module li a.active').each( function() {
+	    	module.push( $(this).attr('data-filter') );
+	    });
+	    var skill = [];
+	    $('#skill li a.active').each( function() {
+	    	skill.push( $(this).attr('data-filter') );
+	    });
+	    var topic = [];
+	    $('#topic li a.active').each( function() {
+	    	topic.push( $(this).attr('data-filter') );
+	    });
 		$.ajax( {
 			type		: "GET",
 			data		: { module : module,  skill : skill, topic : topic, },

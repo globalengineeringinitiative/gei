@@ -12,12 +12,21 @@ $tax = array(
 	'relation' => 'AND',
 );
 
-if ( isset( $_GET['module'] ) )
-	$tax[] = array( 'taxonomy' => 'gei_module', 'field' => 'slug', 'terms' => $_GET['module'] );
-if ( isset( $_GET['skill'] ) )
-	$tax[] = array( 'taxonomy' => 'gei_skill', 'field' => 'slug', 'terms' => $_GET['skill'] );
-if ( isset( $_GET['topic'] ) )
-	$tax[] = array( 'taxonomy' => 'gei_topic', 'field' => 'slug', 'terms' => $_GET['topic'] );
+if ( isset( $_GET['module'] ) ) :
+	foreach ( $_GET['module'] as $module ) {
+		$tax[] = array( 'taxonomy' => 'gei_module', 'field' => 'slug', 'terms' => $module );
+	}
+endif;
+if ( isset( $_GET['skill'] ) ) :
+	foreach ( $_GET['skill'] as $skill ) {
+		$tax[] = array( 'taxonomy' => 'gei_skill', 'field' => 'slug', 'terms' => $skill );
+	}
+endif;
+if ( isset( $_GET['topic'] ) ) :
+	foreach ( $_GET['topic'] as $topic ) {
+		$tax[] = array( 'taxonomy' => 'gei_topic', 'field' => 'slug', 'terms' => $topic );
+	}
+endif;
 
 $args = array(
 	'post_type' => 'gei_resource',
