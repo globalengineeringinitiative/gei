@@ -38,6 +38,8 @@ body {
 	line-height: 1.4;
 }
 
+.screen-reader-text { display: none; }
+
 h1, h2, h3, h4, h5, h6 {
 	font-family: $header-font;
 	font-weight: 800;
@@ -221,6 +223,7 @@ body {
 		height: auto;
 		width: 100%;
 		position: fixed;
+		z-index: 9999;
 		background: $menu-background;
 		border-top: solid 1px $menu-background;
 		border-bottom: solid 1px darken($menu-background, 10%);
@@ -420,6 +423,45 @@ body {
 							background: $primary;
 						}
 					}
+				}
+			}
+			#searchform {
+				#s {
+					display: block;
+					float: left;
+					font: normal em(14px) $body-font-sans;
+					color: $black;
+					border-left: 2px solid $light-grey;
+					border-top: none; border-right: none; border-bottom: none;
+					background: $light-grey;
+					padding: $padding-vertical / 2 $padding-horizontal / 2;
+					margin: 0;
+					&:focus {
+						border-left: 2px solid $secondary;
+						outline: 0;
+					}
+				}
+				#searchsubmit {
+					display: block;
+					float: left;
+					padding: $padding-vertical / 2 $padding-horizontal / 2;
+					margin: 0;
+					background: $light-grey;
+					border: none;
+					font: normal em(14px) $body-font-sans;
+					cursor: pointer;
+					color: $menu-link-color;
+					@include transition( all 0.3s );
+					&:hover {
+						color: $secondary;
+					}
+					&.active {
+						color: $white;
+						background: $primary;
+					}
+				}
+				&:hover {
+					#s { border-left: 2px solid $secondary; }
 				}
 			}
 		}
