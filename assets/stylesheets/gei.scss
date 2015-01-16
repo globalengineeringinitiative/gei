@@ -319,37 +319,35 @@ body {
 		padding: $padding-vertical $padding-horizontal;
 		#primary {
 			@include span-columns(12);
-			#isotope {
-				.resource {
-					@include span-columns(12 of 12);
-					background: $light-grey;
-					border-left: solid 2px $primary;
-					&#null {
-						border-left: solid 2px $secondary;
-						&:hover {
-							border-left: solid 2px $secondary-light;
-						}
-					}
+			.resource {
+				@include span-columns(12 of 12);
+				background: $light-grey;
+				border-left: solid 2px $primary;
+				&#null {
+					border-left: solid 2px $secondary;
 					&:hover {
-						border-left: solid 2px $secondary;
+						border-left: solid 2px $secondary-light;
 					}
-					padding-top: 0;
-					padding-right: $padding-horizontal;
-					padding-bottom: $padding-vertical * 2;
-					padding-left: $padding-horizontal - em(2px);
-					margin: 0 0 em(18px);
-					h1 { font-size: em(18px); }
-					h2 { font-size: em(14px); }
-					@include transition( all 0.3s );
-					#tags {
-						padding-left: 0;
-						margin-bottom: 0;
-						li {
-							list-style-type: none;
-							margin-bottom: 0.5em;
-							&:last-child {
-								margin-bottom: 0.25em;
-							}
+				}
+				&:hover {
+					border-left: solid 2px $secondary;
+				}
+				padding-top: 0;
+				padding-right: $padding-horizontal;
+				padding-bottom: $padding-vertical * 2;
+				padding-left: $padding-horizontal - em(2px);
+				margin: 0 0 em(18px);
+				h1 { font-size: em(18px); }
+				h2 { font-size: em(14px); }
+				@include transition( all 0.3s );
+				#tags {
+					padding-left: 0;
+					margin-bottom: 0;
+					li {
+						list-style-type: none;
+						margin-bottom: 0.5em;
+						&:last-child {
+							margin-bottom: 0.25em;
 						}
 					}
 				}
