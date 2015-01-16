@@ -477,7 +477,7 @@ register_field_group(array (
 			'name' => 'banner_images',
 			'prefix' => '',
 			'type' => 'gallery',
-			'instructions' => 'Images should be 1600 × 1200 pixels minimum, 4:3 aspect ratio.',
+			'instructions' => 'Images should be 1600 &times; 1200 pixels minimum, 4:3 aspect ratio.',
 			'required' => 1,
 			'conditional_logic' => 0,
 			'wrapper' => array (
