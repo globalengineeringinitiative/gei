@@ -464,3 +464,48 @@ function gei_do_api() {
 
 	exit;
 }
+
+if( function_exists('register_field_group') ):
+
+register_field_group(array (
+	'key' => 'group_54b975fe7b84b',
+	'title' => 'Banner Images',
+	'fields' => array (
+		array (
+			'key' => 'field_54b976160ec40',
+			'label' => 'Banner Images',
+			'name' => 'banner_images',
+			'prefix' => '',
+			'type' => 'gallery',
+			'instructions' => 'Images should be 1600 × 1200 pixels minimum, 4:3 aspect ratio.',
+			'required' => 1,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'min' => '',
+			'max' => '',
+			'preview_size' => 'thumbnail',
+			'library' => 'all',
+		),
+	),
+	'location' => array (
+		array (
+			array (
+				'param' => 'page',
+				'operator' => '==',
+				'value' => '61',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+));
+
+endif;
