@@ -317,8 +317,35 @@ body {
 	#content {
 		@include outer-container;
 		padding: $padding-vertical $padding-horizontal;
-		#primary {
+		#primary, #resources {
 			@include span-columns(12);
+			.gei_resource {
+				h2 { font-size: em(18px); }
+				.entry-meta p {
+					font: em(14px) $body-font-sans;
+				}
+				.links {
+					ul {
+						list-style-type: none;
+						padding-left: 0;
+						li {
+							a {
+								font: em(14px) $body-font-sans;
+								.fa {
+									font-size: em(18px);
+									width: 1em;
+									text-align: right;
+									padding-right: $padding-horizontal / 4;
+									&.fa-angle-left {
+										font-weight: 600;
+									}
+								}
+							}
+						}
+						
+					}
+				}
+			}
 			.resource {
 				@include span-columns(12 of 12);
 				background: $light-grey;
@@ -379,6 +406,7 @@ body {
 		}
 		#secondary {
 			@include span-columns(12);
+			margin-bottom: em(16px);
 			h1 { font-size: em(18px); }
 			h2 {
 				font-size: em(14px);
@@ -447,6 +475,35 @@ body {
 					}
 				}
 			}
+			.tags {
+				padding-left: 0;
+				margin-bottom: 0;
+				display: inline-block;
+				list-style-type: none;
+				li {
+					display: inline;
+					margin-right: $padding-horizontal / 2;
+					&:last-child {
+						margin-right: none;
+					}
+					a {
+						font: em(14px) $body-font-sans;
+						padding: $padding-vertical / 2 $padding-horizontal / 2 $padding-vertical / 2 ( $padding-horizontal / 2 ) - em(2px);
+						border-left: 2px solid $light-grey;
+						background: $light-grey;
+						&:hover {
+							color: $link-active-color;
+							border-left: 2px solid $secondary;
+						}
+						&.active {
+							color: $white;
+							background: $primary;
+						}
+
+					}
+				}
+			}
+			
 		}
 		#searchform {
 			#s {
@@ -557,21 +614,25 @@ body {
 				@include shift(2);
 			}
 		}
-		&.page-template-page-library, .single-gei_resource {
+		&.page-template-page-library, &.single-gei_resource {
 			#content {
 				@include direction-context(right-to-left) {
-					#primary {
+					#primary, #resources {
 						@include span-columns(7);
 						@include shift(1);
 					}
 				}
 				#secondary {
-					margin-top: em(64px);
 					@include span-columns(3);
 					@include shift(1);
 				}
 			}
-		}	
+		}
+		&.single-gei_resource {
+			#secondary {
+				margin-top: em(74px);
+			}
+		}
 		#colophon {
 			.site-info {
 				@include span-columns(9);
@@ -596,19 +657,23 @@ body {
 				@include shift(2);
 			}
 		}
-		&.page-template-page-library, .single-gei_resource {
+		&.page-template-page-library, &.single-gei_resource {
 			#content {
 				@include direction-context(right-to-left) {
-					#primary {
+					#primary, #resources {
 						@include span-columns(8);
 						@include shift(0.5);
 					}
 				}
 				#secondary {
-					margin-top: em(64px);
 					@include span-columns(3);
 					@include shift(0.5);
 				}
+			}
+		}
+		&.single-gei_resource {
+			#secondary {
+				margin-top: em(74px);
 			}
 		}
 	}

@@ -3,15 +3,31 @@
  * @package Global Engineering Initiative
  */
 ?>
-<?php $terms = wp_get_object_terms( $post->ID, array(
-	'gei_discipline',
-	'gei_module',
-	'gei_region',
-	'gei_skill',
-	'gei_topic',
-) );
-$types = wp_get_object_terms( $post->ID, array( 'gei_type' ) );  $type = $types[0]; ?>
-
+<?php $disciplines = wp_get_object_terms( $post->ID, array( 'gei_discipline', ) );
+$modules = wp_get_object_terms( $post->ID, array( 'gei_module', ) );
+$regions = wp_get_object_terms( $post->ID, array( 'gei_region', ) );
+$skills = wp_get_object_terms( $post->ID, array( 'gei_skill', ) );
+$topics = wp_get_object_terms( $post->ID, array( 'gei_topic', ) );
+$types = wp_get_object_terms( $post->ID, array( 'gei_type' ) );
+$post_class = 'resource ';
+foreach ( $disciplines as $term ) {
+	$post_class .= $term->slug . ' ';
+}
+foreach ( $modules as $term ) {
+	$post_class .= $term->slug . ' ';
+}
+foreach ( $regions as $term ) {
+	$post_class .= $term->slug . ' ';
+}
+foreach ( $skills as $term ) {
+	$post_class .= $term->slug . ' ';
+}
+foreach ( $topics as $term ) {
+	$post_class .= $term->slug . ' ';
+}
+foreach ( $types as $term ) {
+	$post_class .= $term->slug . ' ';
+} ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
@@ -27,9 +43,9 @@ $types = wp_get_object_terms( $post->ID, array( 'gei_type' ) );  $type = $types[
 						if ( $c > 2 && $i < $c ) echo ', ';
 						if ( $i == ( $c - 1 ) ) echo ' and ';
 						$i++;
-					} ?><br /><?php endif; ?>
+					} ?><?php if ( get_field( 'source' ) || get_field( 'publication_date' ) ) : ?> / <?php endif; ?><?php endif; ?>
 			<?php if ( get_field( 'source' ) ) :
-				the_field( 'source' ); ?><br /><?php endif; ?>
+				the_field( 'source' ); ?><?php if ( get_field( 'publication_date' ) ) : ?> / <?php endif; ?><?php endif; ?>
 			<?php if ( get_field( 'publication_date' ) ) :
 			$date = DateTime::createFromFormat('m/d/Y', get_field('publication_date') );
 			echo $date->format('F Y');
@@ -43,13 +59,12 @@ $types = wp_get_object_terms( $post->ID, array( 'gei_type' ) );  $type = $types[
 
 	<footer class="entry-footer">
 		<section class="links">
-			<p>
+			<ul>
 		<?php if ( get_field( 'external_url' ) ) : ?>
-			<a href="<?php the_field( 'external_url' ); ?>" target="_blank"><i class="fa fa-globe"></i>  <?php _e( 'Visit Resource Online', 'gei' ); ?></a>
-			<?php if ( get_field( 'file_download_url' ) ) : ?><br /><?php endif; ?>
+			<li><a href="<?php the_field( 'external_url' ); ?>" target="_blank"><i class="fa fa-globe"></i>  <?php _e( 'Visit Resource Online', 'gei' ); ?></a></li>
 		<?php endif; ?>
 		<?php if ( get_field( 'file_download_url' ) ) : ?>
-			<a href="<?php the_field( 'file_download_url' ); ?>" target="_blank">
+			<li><a href="<?php the_field( 'file_download_url' ); ?>" target="_blank">
 				<?php if ( get_field( 'file_format' ) ) :
 					$format = get_field( 'file_format' );
 					switch( $format ) {
@@ -67,10 +82,12 @@ $types = wp_get_object_terms( $post->ID, array( 'gei_type' ) );  $type = $types[
 					    	break;
 					}
 				else :
-					echo '<i class="fa fa-file-o"></i>';
+					echo '<i class="fa fa-reply"></i>';
 				endif; ?> <?php _e( 'Download Resource', 'gei' ); ?></a>
+			</li>
 		<?php endif; ?>
-			</p>
+				<li><a href="<?php $library = get_page_by_title( __('Library', 'gei') ); echo get_page_link( $library->ID );  ?>"><i class="fa fa-angle-left"></i> Return to Library</a></li>
+			</ul>
 		</section>
 		<ul id="tags">
 			<?php foreach ( $terms as $term ) { ?>

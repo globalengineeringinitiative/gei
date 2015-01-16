@@ -17,11 +17,10 @@ get_header(); ?>
 			<?php endwhile; // end of the loop. ?>
 
 		</main><!-- #main -->
-		<section id="resources" class="container">
-			<div id="isotope" class="resources">
-			</div>
-		</section>
 	</div><!-- #primary -->
-
-<?php get_sidebar( 'library' ); ?>
+	<?php get_sidebar( 'library' ); ?>
+	<div id="resources" class="container">
+		<div id="isotope" class="resources">
+		</div>
+	</div>
 <?php get_footer(); ?>

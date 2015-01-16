@@ -93,7 +93,7 @@ add_action( 'widgets_init', 'gei_widgets_init' );
  * Enqueue scripts and styles.
  */
 function gei_scripts() {
-	$v = 20150115;
+	$v = 20150117;
 	
 	wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic|Alegreya:400italic,700italic,900italic,400,700,900|Raleway:400,300,200,100,500,600,700,800,900' );
 	

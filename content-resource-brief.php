@@ -64,7 +64,7 @@ foreach ( $types as $term ) {
 		
 		<?php if ( !empty( $modules ) ) { ?>
 			<div class="tags">
-				<span class="label"><?php _e( 'Modules', 'gei' ); ?>: </span>
+				<span class="label"><?php _e( 'Module(s)', 'gei' ); ?>: </span>
 				<ul id="modules">
 					<?php foreach ( $modules as $term ) { ?>
 					<li><a href="<?php echo esc_url( get_term_link( $term ) ); ?>"><?php echo $term->name; ?></a></li>
@@ -74,7 +74,7 @@ foreach ( $types as $term ) {
 		<?php } ?>
 		<?php if ( !empty( $skills ) ) { ?>
 			<div class="tags">
-				<span class="label"><?php _e( 'Skills', 'gei' ); ?>: </span>
+				<span class="label"><?php _e( 'Skill(s)', 'gei' ); ?>: </span>
 				<ul id="skills">
 					<?php foreach ( $skills as $term ) { ?>
 					<li><a href="<?php echo esc_url( get_term_link( $term ) ); ?>"><?php echo $term->name; ?></a></li>
@@ -84,7 +84,7 @@ foreach ( $types as $term ) {
 		<?php } ?>
 		<?php if ( !empty( $topics ) ) { ?>
 			<div class="tags">
-				<span class="label"><?php _e( 'Topics', 'gei' ); ?>: </span>
+				<span class="label"><?php _e( 'Topic(s)', 'gei' ); ?>: </span>
 				<ul id="topics">
 					<?php foreach ( $topics as $term ) { ?>
 					<li><a href="<?php echo esc_url( get_term_link( $term ) ); ?>"><?php echo $term->name; ?></a></li>
