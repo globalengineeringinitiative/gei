@@ -17,9 +17,13 @@
 	    $('#topic li a.active').each( function() {
 	    	topic.push( $(this).attr('data-filter') );
 	    });
+	    var type = [];
+	    $('#type li a.active').each( function() {
+	    	type.push( $(this).attr('data-filter') );
+	    });
 		$.ajax( {
 			type		: "GET",
-			data		: { module : module,  skill : skill, topic : topic, },
+			data		: { module : module,  skill : skill, topic : topic, type : type },
 			dataType	: "html",
 			url			: "http://"+window.location.host+"/wp-content/themes/gei/loop-handler.php",
 			beforeSend	: function() {},

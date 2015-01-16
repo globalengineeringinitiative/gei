@@ -27,6 +27,11 @@ if ( isset( $_GET['topic'] ) ) :
 		$tax[] = array( 'taxonomy' => 'gei_topic', 'field' => 'slug', 'terms' => $topic );
 	}
 endif;
+if ( isset( $_GET['type'] ) ) :
+	foreach ( $_GET['type'] as $type ) {
+		$tax[] = array( 'taxonomy' => 'gei_type', 'field' => 'slug', 'terms' => $type );
+	}
+endif;
 
 $args = array(
 	'post_type' => 'gei_resource',
@@ -35,7 +40,7 @@ $args = array(
 	'orderby' => 'post_title',
 );
 
-if ( isset( $_GET['module'] ) || isset( $_GET['skill'] ) || isset( $_GET['topic'] ) )
+if ( isset( $_GET['module'] ) || isset( $_GET['skill'] ) || isset( $_GET['topic'] ) || isset( $_GET['type'] ) )
 	$args['tax_query'] = $tax;
 
 $library = new WP_Query( $args );
