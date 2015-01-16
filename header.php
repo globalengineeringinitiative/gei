@@ -31,4 +31,18 @@
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
+	<?php if ( is_front_page() ) :
+		$images = get_field( 'banner_images' );
+		if( $images ): ?>
+		    <div id="banner">
+			    <h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+			    <div class="cycle-slideshow" data-cycle-auto-height="4:3" data-cycle-speed="1000">
+			        <?php foreach( $images as $image ): ?>
+			        	<img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" />
+			        <?php endforeach; ?>
+			    </div>
+		    </div>
+		<?php endif;
+	endif; ?>
+
 	<div id="content" class="site-content">

@@ -107,6 +107,12 @@ function gei_scripts() {
 	
 	wp_enqueue_script( 'gei', get_template_directory_uri() . '/assets/javascripts/gei.min.js', array( 'jquery' ), $v, true );
 	
+	if ( is_front_page() ) {
+	
+		wp_enqueue_script( 'cycle2', get_template_directory_uri() . '/assets/javascripts/jquery.cycle2.min.js', array( 'jquery' ), '2.1.6', true );
+	
+	}
+	
 	if ( is_page( __( 'library', 'gei' ) ) ) {
 		
 		wp_enqueue_script( 'isotope', get_template_directory_uri() . '/assets/javascripts/isotope.pkgd.min.js', array( 'jquery' ), '2.1', true );

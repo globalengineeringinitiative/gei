@@ -314,6 +314,25 @@ body {
 			} 
 		}
 	}
+	#banner {
+		width: 100%;
+		margin-bottom: $padding-vertical * 2;
+		position: relative;
+		h1 {
+			position: absolute;
+			width: 100%;
+			text-align: center;
+			top: 40px;
+			font: 800 em(36px) $header-font;
+			color: white;
+			z-index: 999;
+			text-shadow: 0px 3px 0px black
+		}
+		.cycle-slideshow {
+			width: 100%;
+			img { width: 100%; height: auto }
+		}
+	}
 	#content {
 		@include outer-container;
 		padding: $padding-vertical $padding-horizontal;
@@ -609,6 +628,12 @@ body {
 				}
 			}
 		}
+		#banner {
+			h1 {
+				top: 25%;
+				font: 800 em(64px) $header-font;
+			}
+		}
 		#content {
 			#primary {
 				@include span-columns(8);
@@ -650,6 +675,12 @@ body {
 					.desktop { display: inline; }
 					.mobile { display: none; }
 				}
+			}
+		}
+		#banner {
+			h1 {
+				top: 25%;
+				font: 800 em(64px) $header-font;
 			}
 		}
 		#content {
