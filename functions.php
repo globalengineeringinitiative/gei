@@ -339,3 +339,122 @@ function gei_embed_oembed_html($html, $url, $attr, $post_id) {
 	$html = str_replace('?feature=oembed', '?feature=oembed&controls=1&showinfo=0&modestbranding', $html);
 	return '<div class="embed-responsive embed-responsive-16by9">' . $html . '</div>';
 }
+
+include( 'inc/api/v1/class-gei-api.php');
+include( 'inc/api/v1/resources/class-gei-resources-api.php');
+
+add_filter( 'init', 'gei_rewrite_rules_for_api', 1 );
+
+/**
+ * Adding a rewrite rule for Resource API
+ */
+function gei_rewrite_rules_for_api() {
+	add_rewrite_endpoint( 'api', EP_ROOT );
+	add_action( 'template_redirect', 'gei_do_api', 0 );
+}
+
+/**
+ * Expects the pattern `api/v1/books/{id}`
+ * 
+ */
+function gei_do_api() {
+	// Don't do anything and return if `api` isn't part of the URL 
+	if ( ! array_key_exists( 'api', $GLOBALS['wp_query']->query_vars ) ) {
+		return;
+	}
+
+	// Support only GET requests for now
+	if ( 'GET' !== $_SERVER['REQUEST_METHOD'] ) {
+		\GlobalEngineeringInitiative\Api_v1\Api::apiErrors( 'method' );
+	}
+
+	// Deal with the rest of the URL
+	$nouns = get_query_var( 'api' );
+	if ( '' === trim( $nouns, '/' ) || empty( $nouns ) ) {
+		\GlobalEngineeringInitiative\Api_v1\Api::apiErrors( 'resource' );
+	}
+
+	// parse url, at minimum we need `v1` and `books`
+	$parts = explode( '/', $nouns );
+
+	// required 'v1'
+	$version = array_shift( $parts );
+
+	// required 'books'
+	$resource = array_shift( $parts );
+
+	// optional 'id'
+	$resource_id = ( isset( $parts[0] ) ) ? $parts[0] : '';
+
+	if ( 'v1' !== $version ) {
+		\GlobalEngineeringInitiative\Api_v1\Api::apiErrors( 'version' );
+	}
+
+	// Filter user input
+	if ( is_array( $_GET ) ) {
+
+		$args = array(
+		    'offset' => FILTER_SANITIZE_NUMBER_INT,
+		    'limit' => FILTER_SANITIZE_NUMBER_INT,
+		    'json' => FILTER_SANITIZE_NUMBER_INT,
+		    'xml' => FILTER_SANITIZE_NUMBER_INT,
+		    'titles' => array(
+				'filter' => FILTER_SANITIZE_STRING,
+				'flags' => FILTER_FLAG_STRIP_HIGH
+		    ),
+		    'authors' => array(
+				'filter' => FILTER_SANITIZE_STRING,
+				'flags' => FILTER_FLAG_STRIP_LOW
+		    ),
+		    'disciplines' => array(
+				'filter' => FILTER_SANITIZE_STRING,
+				'flags' => FILTER_FLAG_STRIP_LOW
+		    ),
+		    'modules' => array(
+				'filter' => FILTER_SANITIZE_STRING,
+				'flags' => FILTER_FLAG_STRIP_HIGH
+		    ),
+		    'regions' => array(
+				'filter' => FILTER_SANITIZE_STRING,
+				'flags' => FILTER_FLAG_STRIP_LOW
+		    ),
+		    'skills' => array(
+				'filter' => FILTER_SANITIZE_STRING,
+				'flags' => FILTER_FLAG_STRIP_LOW
+		    ),
+		    'topics' => array(
+				'filter' => FILTER_SANITIZE_STRING,
+				'flags' => FILTER_FLAG_STRIP_LOW
+		    ),
+		    'types' => array(
+				'filter' => FILTER_SANITIZE_STRING,
+				'flags' => FILTER_FLAG_STRIP_LOW
+		    ),
+		);
+
+		$variations = filter_input_array( INPUT_GET, $args, false );
+
+		if ( $variations ) {
+			// Trim whitespace
+			array_filter( $variations, __NAMESPACE__ . '\trim_value' );
+		}
+	}
+
+	switch ( $resource ) {
+		case 'resources':
+			try {
+				new \GlobalEngineeringInitiative\Api_v1\Resources\ResourcesApi( $resource_id, $variations );
+			} catch ( Exception $e ) {
+				echo $e->getMessage();
+			}
+			break;
+		case 'docs':
+			require( 'inc/api/v1/docs/api-documentation.php');
+			break;
+		default:
+			\GlobalEngineeringInitiative\Api_v1\Api::apiErrors( 'resource' );
+			break;
+	}
+
+	exit;
+}
