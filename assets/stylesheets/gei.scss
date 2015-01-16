@@ -230,23 +230,18 @@ body {
 		.site-branding {
 			padding: $padding-vertical $padding-horizontal;
 			h1 {
-				font-family: $header-font;
-				font-size: em(18px);
-				font-weight: 800;
-				text-transform: uppercase;
+				height: 25px;
 				margin: 0;
 				a {
-					color: $black;
-					text-decoration: none;
-					span {
-						font: inherit;
-					}
-					&:hover {
-						color: $link-active-color;
-					}
+					display: inline-block;
+					text-indent: -99999px;
+					position: absolute;
+					top: $padding-vertical / 2;
+					cursor: pointer;
+					height: 25px;
+					width: 35px;
+					@include retina-image('../images/logo-mark', 35px 25px);
 				}
-				.desktop { display: none; }
-				.mobile { display: inline; }
 			}
 		}
 		nav {
@@ -281,9 +276,8 @@ body {
 				li {
 					font-size: em(16px);
 					font-family: $header-font;
-					font-weight: 800;
+					font-weight: 600;
 					line-height: 20px;
-					text-transform: uppercase;
 					padding: $padding-vertical 0;
 					a {
 						color: $menu-link-color;
@@ -322,11 +316,25 @@ body {
 			position: absolute;
 			width: 100%;
 			text-align: center;
-			top: 40px;
-			font: 800 em(36px) $header-font;
-			color: white;
+			top: 0;
+			font: 400 em(36px) $body-font-sans;
+			line-height: 1;
+			text-transform: uppercase;
+			color: $secondary;
 			z-index: 999;
-			text-shadow: 0px 3px 0px black
+			text-shadow: 0px 1px 5px $black;
+			padding: $padding-vertical 0;
+			span {
+				display: block;
+			}
+			span:nth-child(2) {
+				font-weight: 300;
+				color: $primary;
+			}
+			span:nth-child(3) {
+				font-weight: 300;
+				color: $light-grey;
+			}
 		}
 		.cycle-slideshow {
 			width: 100%;
@@ -578,9 +586,12 @@ body {
 	}
 	@include media($tablet) {
 		#masthead {
-			height: em(36px);
+			height: em(50px);
 			.site-branding {
 				float: left;
+				h1 a {
+					top: 12px;
+				}
 			}
 			nav {
 				#menu-toggle {
@@ -592,6 +603,7 @@ body {
 				}
 				ul {
 					float: right;
+					margin-top: 14px;
 					padding: 0;
 					li {
 						position: relative;
@@ -630,8 +642,9 @@ body {
 		}
 		#banner {
 			h1 {
-				top: 25%;
-				font: 800 em(64px) $header-font;
+				top: 20%;
+				font-size: em(64px);
+				
 			}
 		}
 		#content {
@@ -679,8 +692,8 @@ body {
 		}
 		#banner {
 			h1 {
-				top: 25%;
-				font: 800 em(64px) $header-font;
+				top: 20%;
+				font-size: em(64px);
 			}
 		}
 		#content {

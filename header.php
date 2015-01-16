@@ -22,7 +22,7 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'gei' ); ?></a>
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><span class="desktop"><?php bloginfo( 'name' ); ?></span><span class="mobile"><?php echo get_option( 'options_short_title' ); ?></span></a></h1>
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo( 'name' ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
@@ -35,7 +35,7 @@
 		$images = get_field( 'banner_images' );
 		if( $images ): ?>
 		    <div id="banner">
-			    <h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+			    <h1 class="site-title"><span>Global</span> <span>Engineering</span> <span>Initiative</span></h1>
 			    <div class="cycle-slideshow" data-cycle-auto-height="16:9" data-cycle-speed="1000">
 			        <?php foreach( $images as $image ): ?>
 			        	<?php echo wp_get_attachment_image( $image['ID'], 'slide' ); ?>
