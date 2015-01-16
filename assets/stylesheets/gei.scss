@@ -339,15 +339,39 @@ body {
 				margin: 0 0 em(18px);
 				h1 { font-size: em(18px); }
 				h2 { font-size: em(14px); }
+				.type {
+					font: em(14px) $body-font-sans;
+					color: $menu-link-color;
+					padding: $padding-vertical / 2 $padding-horizontal / 2;
+					background: $white;
+					position: absolute;
+					bottom: em(14px);
+					right: $padding-horizontal;
+					&:hover {
+						color: $menu-link-active-color;
+					}
+				}
 				@include transition( all 0.3s );
-				#tags {
-					padding-left: 0;
-					margin-bottom: 0;
-					li {
+				.metadata { font: em(14px) $body-font-sans; }
+				.tags {
+					margin-top: $padding-vertical;
+					.label { font: em(14px) $body-font-sans; margin-right: $padding-horizontal / 2; }
+					ul {
+						padding-left: 0;
+						margin-bottom: 0;
+						display: inline-block;
 						list-style-type: none;
-						margin-bottom: 0.5em;
-						&:last-child {
-							margin-bottom: 0.25em;
+						li {
+							display: inline;
+							margin-right: $padding-horizontal / 2;
+							&:last-child {
+								margin-right: none;
+							}
+							a {
+								font: em(14px) $body-font-sans;
+								padding: $padding-vertical / 2 $padding-horizontal / 2;
+								background: $white;
+							}
 						}
 					}
 				}
@@ -423,44 +447,44 @@ body {
 					}
 				}
 			}
-			#searchform {
-				#s {
-					display: block;
-					float: left;
-					font: normal em(14px) $body-font-sans;
-					color: $black;
-					border-left: 2px solid $light-grey;
-					border-top: none; border-right: none; border-bottom: none;
-					background: $light-grey;
-					padding: $padding-vertical / 2 $padding-horizontal / 2;
-					margin: 0;
-					&:focus {
-						border-left: 2px solid $secondary;
-						outline: 0;
-					}
+		}
+		#searchform {
+			#s {
+				display: block;
+				float: left;
+				font: normal em(14px) $body-font-sans;
+				color: $black;
+				border-left: 2px solid $light-grey;
+				border-top: none; border-right: none; border-bottom: none;
+				background: $light-grey;
+				padding: $padding-vertical / 2 $padding-horizontal / 2;
+				margin: 0;
+				&:focus {
+					border-left: 2px solid $secondary;
+					outline: 0;
 				}
-				#searchsubmit {
-					display: block;
-					float: left;
-					padding: $padding-vertical / 2 $padding-horizontal / 2;
-					margin: 0;
-					background: $light-grey;
-					border: none;
-					font: normal em(14px) $body-font-sans;
-					cursor: pointer;
-					color: $menu-link-color;
-					@include transition( all 0.3s );
-					&:hover {
-						color: $secondary;
-					}
-					&.active {
-						color: $white;
-						background: $primary;
-					}
-				}
+			}
+			#searchsubmit {
+				display: block;
+				float: left;
+				padding: $padding-vertical / 2 $padding-horizontal / 2;
+				margin: 0;
+				background: $light-grey;
+				border: none;
+				font: normal em(14px) $body-font-sans;
+				cursor: pointer;
+				color: $menu-link-color;
+				@include transition( all 0.3s );
 				&:hover {
-					#s { border-left: 2px solid $secondary; }
+					color: $secondary;
 				}
+				&.active {
+					color: $white;
+					background: $primary;
+				}
+			}
+			&:hover {
+				#s { border-left: 2px solid $secondary; }
 			}
 		}
 	}
@@ -469,7 +493,7 @@ body {
 		padding: $padding-vertical $padding-horizontal 1em;
 		.site-info {
 			@include span-columns(12);
-			font-family: $body-font-sans;
+			font: em(14px) $body-font-sans;
 			text-align: center;
 			.desktop { display: none; }
 			.mobile { display: inline; }

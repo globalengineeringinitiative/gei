@@ -8,7 +8,7 @@ function gei_module_init() {
 		'show_ui'           => true,
 		'show_admin_column' => true,
 		'query_var'         => true,
-		'rewrite'           => true,
+		'rewrite'           => array( 'slug' => 'module' ),
 		'capabilities'      => array(
 			'manage_terms'  => 'edit_posts',
 			'edit_terms'    => 'edit_posts',

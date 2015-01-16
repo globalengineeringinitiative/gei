@@ -8,7 +8,7 @@ function gei_region_init() {
 		'show_ui'           => true,
 		'show_admin_column' => true,
 		'query_var'         => true,
-		'rewrite'           => true,
+		'rewrite'           => array( 'slug' => 'region' ),
 		'capabilities'      => array(
 			'manage_terms'  => 'edit_posts',
 			'edit_terms'    => 'edit_posts',

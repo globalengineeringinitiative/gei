@@ -74,9 +74,9 @@ $types = wp_get_object_terms( $post->ID, array( 'gei_type' ) );  $type = $types[
 		</section>
 		<ul id="tags">
 			<?php foreach ( $terms as $term ) { ?>
-			<li><a class="btn btn-primary"><?php echo $term->name; ?></a></li>
+			<li><a href=""><?php echo $term->name; ?></a></li>
 			<?php } ?>
-			<li><a class="btn btn-default"><?php echo $type->name; ?></a></li>
+			<li><a href=""><?php echo $type->name; ?></a></li>
 		</ul>		
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
