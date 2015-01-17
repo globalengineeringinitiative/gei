@@ -89,11 +89,5 @@ foreach ( $types as $term ) {
 				<li><a href="<?php $library = get_page_by_title( __('Library', 'gei') ); echo get_page_link( $library->ID );  ?>"><i class="fa fa-angle-left"></i> Return to Library</a></li>
 			</ul>
 		</section>
-		<ul id="tags">
-			<?php foreach ( $terms as $term ) { ?>
-			<li><a href=""><?php echo $term->name; ?></a></li>
-			<?php } ?>
-			<li><a href=""><?php echo $type->name; ?></a></li>
-		</ul>		
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
