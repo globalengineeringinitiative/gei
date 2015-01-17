@@ -89,5 +89,8 @@ foreach ( $types as $term ) {
 				<li><a href="<?php $library = get_page_by_title( __('Library', 'gei') ); echo get_page_link( $library->ID );  ?>"><i class="fa fa-angle-left"></i> Return to Library</a></li>
 			</ul>
 		</section>
+		<section class="feedback">
+			<a href="mailto:globalengineering@gmail.com?subject=Issue Report for '<?php the_title(); ?>'&body=Hello, I've noticed an issue with <?php the_permalink(); ?> &mdash; here are the details:"><i class="fa fa-paper-plane"></i> Report Issue</a>
+		</section>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
