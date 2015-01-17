@@ -71,8 +71,8 @@ register_field_group( array (
 	'fields' => array (
 		array (
 			'key' => 'field_5493bcf20f7c1',
-			'label' => 'Subtitle',
-			'name' => 'subtitle',
+			'label' => __('Subtitle', 'gei'),
+			'name' => 'subtitle', 'gei',
 			'prefix' => '',
 			'type' => 'text',
 			'instructions' => '',
@@ -93,7 +93,7 @@ register_field_group( array (
 		),
 		array (
 			'key' => 'field_5493bd060f7c3',
-			'label' => 'Author(s)',
+			'label' => __('Author(s)', 'gei'),
 			'name' => 'authors',
 			'prefix' => '',
 			'type' => 'repeater',
@@ -108,11 +108,11 @@ register_field_group( array (
 			'min' => '',
 			'max' => '',
 			'layout' => 'table',
-			'button_label' => 'Add Author',
+			'button_label' => __('Add Author', 'gei'),
 			'sub_fields' => array (
 				array (
 					'key' => 'field_5493bfe053b7e',
-					'label' => 'First Name',
+					'label' => __('First Name', 'gei'),
 					'name' => 'first_name',
 					'prefix' => '',
 					'type' => 'text',
@@ -134,7 +134,7 @@ register_field_group( array (
 				),
 				array (
 					'key' => 'field_5493bfe853b7f',
-					'label' => 'Last Name',
+					'label' => __('Last Name', 'gei'),
 					'name' => 'last_name',
 					'prefix' => '',
 					'type' => 'text',
@@ -158,7 +158,7 @@ register_field_group( array (
 		),
 		array (
 			'key' => 'field_5493bd470f7c6',
-			'label' => 'Source Organization / Institution',
+			'label' => __('Source Organization / Institution', 'gei'),
 			'name' => 'source',
 			'prefix' => '',
 			'type' => 'text',
@@ -180,7 +180,7 @@ register_field_group( array (
 		),
 		array (
 			'key' => 'field_5493bd560f7c7',
-			'label' => 'Publication Date',
+			'label' => __('Publication Date', 'gei'),
 			'name' => 'publication_date',
 			'prefix' => '',
 			'type' => 'date_picker',
@@ -198,11 +198,11 @@ register_field_group( array (
 		),
 array (
 			'key' => 'field_54a5b4c97f3b2',
-			'label' => 'Short Summary',
+			'label' => __('Short Summary', 'gei'),
 			'name' => 'short_summary',
 			'prefix' => '',
 			'type' => 'text',
-			'instructions' => '120 characters max.',
+			'instructions' => __('120 characters max.', 'gei'),
 			'required' => 1,
 			'conditional_logic' => 0,
 			'wrapper' => array (
@@ -220,11 +220,11 @@ array (
 		),
 		array (
 			'key' => 'field_5493bcfa0f7c2',
-			'label' => 'Summary',
+			'label' => __('Summary', 'gei'),
 			'name' => 'summary',
 			'prefix' => '',
 			'type' => 'wysiwyg',
-			'instructions' => '500 words max.',
+			'instructions' => __('500 words max.', 'gei'),
 			'required' => 1,
 			'conditional_logic' => 0,
 			'wrapper' => array (
@@ -239,7 +239,7 @@ array (
 		),
 		array (
 			'key' => 'field_5493be9e0f7ce',
-			'label' => 'Recommended Citation',
+			'label' => __('Recommended Citation', 'gei'),
 			'name' => 'recommended_citation',
 			'prefix' => '',
 			'type' => 'wysiwyg',
@@ -258,7 +258,7 @@ array (
 		),
 		array (
 			'key' => 'field_5493bd860f7c8',
-			'label' => 'External URL',
+			'label' => __('External URL', 'gei'),
 			'name' => 'external_url',
 			'prefix' => '',
 			'type' => 'url',
@@ -275,7 +275,7 @@ array (
 		),
 		array (
 			'key' => 'field_5493bd960f7c9',
-			'label' => 'File Download URL',
+			'label' => __('File Download URL', 'gei'),
 			'name' => 'file_download_url',
 			'prefix' => '',
 			'type' => 'url',
@@ -292,7 +292,7 @@ array (
 		),
 		array (
 			'key' => 'field_5493bdab0f7ca',
-			'label' => 'File Format',
+			'label' => __('File Format', 'gei'),
 			'name' => 'file_format',
 			'prefix' => '',
 			'type' => 'select',
@@ -305,10 +305,10 @@ array (
 				'id' => '',
 			),
 			'choices' => array (
-				'pdf' => 'Adobe PDF',
-				'xls' => 'Excel Spreadsheet',
-				'ppt' => 'PowerPoint Slideshow',
-				'doc' => 'Word Document',
+				'pdf' => __('Adobe PDF', 'gei'),
+				'xls' => __('Excel Spreadsheet', 'gei'),
+				'ppt' => __('PowerPoint Slideshow', 'gei'),
+				'doc' => __('Word Document', 'gei'),
 			),
 			'default_value' => array (
 			),
@@ -322,7 +322,7 @@ array (
 		),
 		array (
 			'key' => 'field_5493c364da787',
-			'label' => 'Language',
+			'label' => __('Language', 'gei'),
 			'name' => 'language',
 			'prefix' => '',
 			'type' => 'select',
@@ -352,7 +352,7 @@ array (
 		),
 		array (
 			'key' => 'field_5493bdbc0f7cb',
-			'label' => 'Media Type',
+			'label' => __('Media Type', 'gei'),
 			'name' => 'media_type',
 			'prefix' => '',
 			'type' => 'taxonomy',

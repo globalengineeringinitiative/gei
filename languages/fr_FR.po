@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Global Engineering Initiative\n"
-"POT-Creation-Date: 2015-01-17 14:54-0500\n"
-"PO-Revision-Date: 2015-01-17 15:08-0500\n"
+"POT-Creation-Date: 2015-01-17 15:18-0500\n"
+"PO-Revision-Date: 2015-01-17 15:19-0500\n"
 "Last-Translator: Ned Zimmerman <ned@bight.ca>\n"
 "Language-Team: \n"
 "Language: fr_CA\n"
@@ -141,7 +141,7 @@ msgstr ""
 #: inc/post-types/gei_resource.php:6 inc/post-types/gei_resource.php:8
 #: inc/post-types/gei_resource.php:18
 msgid "Resources"
-msgstr ""
+msgstr "﻿Ressources"
 
 #: inc/post-types/gei_resource.php:7
 msgid "Resource"
@@ -185,7 +185,7 @@ msgstr ""
 
 #: inc/post-types/gei_resource.php:27
 msgid "resources"
-msgstr ""
+msgstr "﻿ressources"
 
 #: inc/post-types/gei_resource.php:47
 #, php-format
@@ -239,6 +239,90 @@ msgstr ""
 #, php-format
 msgid ""
 "Resource draft updated. <a target=\"_blank\" href=\"%s\">Preview Resource</a>"
+msgstr ""
+
+#: inc/post-types/gei_resource.php:74
+msgid "Subtitle"
+msgstr "﻿Sous-titre"
+
+#: inc/post-types/gei_resource.php:96
+msgid "Author(s)"
+msgstr ""
+
+#: inc/post-types/gei_resource.php:111
+msgid "Add Author"
+msgstr ""
+
+#: inc/post-types/gei_resource.php:115
+msgid "First Name"
+msgstr ""
+
+#: inc/post-types/gei_resource.php:137
+msgid "Last Name"
+msgstr ""
+
+#: inc/post-types/gei_resource.php:161
+msgid "Source Organization / Institution"
+msgstr ""
+
+#: inc/post-types/gei_resource.php:183
+msgid "Publication Date"
+msgstr ""
+
+#: inc/post-types/gei_resource.php:201
+msgid "Short Summary"
+msgstr "Résumé court"
+
+#: inc/post-types/gei_resource.php:205
+msgid "120 characters max."
+msgstr ""
+
+#: inc/post-types/gei_resource.php:223
+msgid "Summary"
+msgstr "Résumé"
+
+#: inc/post-types/gei_resource.php:227
+msgid "500 words max."
+msgstr ""
+
+#: inc/post-types/gei_resource.php:242
+msgid "Recommended Citation"
+msgstr ""
+
+#: inc/post-types/gei_resource.php:261
+msgid "External URL"
+msgstr ""
+
+#: inc/post-types/gei_resource.php:278
+msgid "File Download URL"
+msgstr ""
+
+#: inc/post-types/gei_resource.php:295
+msgid "File Format"
+msgstr ""
+
+#: inc/post-types/gei_resource.php:308
+msgid "Adobe PDF"
+msgstr ""
+
+#: inc/post-types/gei_resource.php:309
+msgid "Excel Spreadsheet"
+msgstr ""
+
+#: inc/post-types/gei_resource.php:310
+msgid "PowerPoint Slideshow"
+msgstr ""
+
+#: inc/post-types/gei_resource.php:311
+msgid "Word Document"
+msgstr ""
+
+#: inc/post-types/gei_resource.php:325
+msgid "Language"
+msgstr ""
+
+#: inc/post-types/gei_resource.php:355 sidebar-resource.php:56
+msgid "Media Type"
 msgstr ""
 
 #: inc/taxonomies/gei_discipline.php:19 inc/taxonomies/gei_discipline.php:33
@@ -762,7 +846,7 @@ msgstr "﻿Chercher"
 
 #: sidebar-resource.php:14
 msgid "Resource Data"
-msgstr ""
+msgstr "Données de la ressource"
 
 #: sidebar-resource.php:16
 msgid "Discipline(s)"
@@ -771,7 +855,3 @@ msgstr "﻿Discipline(s)"
 #: sidebar-resource.php:48
 msgid "Region"
 msgstr "﻿Région"
-
-#: sidebar-resource.php:56
-msgid "Media Type"
-msgstr ""
