@@ -442,7 +442,7 @@ function gei_do_api() {
 
 		if ( $variations ) {
 			// Trim whitespace
-			array_filter( $variations, __NAMESPACE__ . '\trim_value' );
+			array_filter( $variations, 'trim_value' );
 		}
 	}
 
@@ -463,6 +463,16 @@ function gei_do_api() {
 	}
 
 	exit;
+}
+
+/**
+ * Callback function that strips whitespace characters
+ * 
+ * @see array_filter()
+ * @param array $value 
+ */
+function trim_value( &$value ) {
+	$value = trim( $value );
 }
 
 if( function_exists('register_field_group') ):
