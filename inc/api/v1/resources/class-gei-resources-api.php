@@ -231,8 +231,10 @@ class ResourcesApi extends Api {
 			}
 
 			// set the limit, look for unlimited requests
-			$limit = ( 0 == $diff['limit'] ) ? NULL : $diff['limit'];
-			$results = array_slice( $results, $diff['offset'], $limit, true );
+			if ( isset( $diff['limit'] ) ) {
+				$limit = ( 0 == $diff['limit'] ) ? NULL : $diff['limit'];
+				$results = array_slice( $results, $diff['offset'], $limit, true );
+			}
 
 			// safety check
 			if ( empty( $results ) ) {
@@ -406,8 +408,16 @@ class ResourcesApi extends Api {
 
 			for ( $i = 0; $i < $count; $i ++ ) {
 				foreach ( $haystack as $key => $val ) {
-					if ( false !== stripos( $val, $search_words[$i] ) ) {
-						$matches[] = $key;
+					if ( is_array( $val ) ) {
+						foreach ( $val as $v ) {
+							if ( false !== stripos( $v, $search_words[$i] ) ) {
+								$matches[] = $key;
+							}
+						}
+					} else {
+						if ( false !== stripos( $val, $search_words[$i] ) ) {
+							$matches[] = $key;
+						}
 					}
 				}
 			}
@@ -416,10 +426,19 @@ class ResourcesApi extends Api {
 			$matches = array_unique( $matches );
 		} else {
 			foreach ( $haystack as $key => $val ) {
-				if ( false !== stripos( $val, $search_words ) ) {
-					$matches[] = $key;
+				if ( is_array( $val ) ) {
+					foreach ( $val as $v ) {
+						if ( false !== stripos( $v, $search_words ) ) {
+							$matches[] = $key;
+						}
+					}
+				} else {
+					if ( false !== stripos( $val, $search_words ) ) {
+						$matches[] = $key;
+					}
 				}
 			}
+			$matches = array_unique( $matches );
 		}
 
 		return $matches;
