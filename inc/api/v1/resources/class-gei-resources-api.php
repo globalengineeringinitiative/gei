@@ -139,75 +139,75 @@ class ResourcesApi extends Api {
 
 			$args_length = count( $diff );
 
-			if ( isset( $diff['titles'] ) ) {
+			if ( isset( $diff['title'] ) ) {
 
 				$titles = $this->getMetaElement( $results, 'title' );
-				$match['titles'] = $this->naiveStringSearch( $diff['titles'], $titles );
+				$match['title'] = $this->naiveStringSearch( $diff['title'], $titles );
 
-				if ( empty( $match['titles'] ) ) { 
+				if ( empty( $match['title'] ) ) { 
 					$titles = $this->getMetaElement( $results, 'subtitle' );
-					$match['titles'] = $this->naiveStringSearch( $diff['titles'], $titles );
+					$match['title'] = $this->naiveStringSearch( $diff['title'], $titles );
 				}
 			}
 
-			if ( isset( $diff['authors'] ) ) {
+			if ( isset( $diff['author'] ) ) {
 
 				$authors = $this->getMetaElement( $results, 'authors' );
-				$match['authors'] = $this->naiveStringSearch( $diff['authors'], $authors );
+				$match['author'] = $this->naiveStringSearch( $diff['author'], $authors );
 			}
 
-			if ( isset( $diff['summaries'] ) ) { // summaries
+			if ( isset( $diff['abstract'] ) ) {
 
 				$summaries = $this->getMetaElement( $results, 'summary' );
-				$match['summaries'] = $this->naiveStringSearch( $diff['summaries'], $summaries );
+				$match['abstract'] = $this->naiveStringSearch( $diff['abstract'], $summaries );
+				
+				if ( empty( $match['abstract'] ) ) { 
+					$summaries = $this->getMetaElement( $results, 'short_summary' );
+					$match['abstract'] = $this->naiveStringSearch( $diff['abstract'], $summaries );
+				}
 			}
 
-			if ( isset( $diff['date'] ) ) { // date
-
+			if ( isset( $diff['date'] ) ) {
+				
+				$diff['date'] = str_replace( '-', '/', $diff['date'] ); // reformat
 				$date = $this->getMetaElement( $results, 'publication_date' );
 				$match['date'] = $this->naiveStringSearch( $diff['date'], $date );
 			}
 
-			if ( isset( $diff['disciplines'] ) ) {
+			if ( isset( $diff['discipline'] ) ) {
 
-				// bring all disciplines into one array
 				$disciplines = $this->getTaxonomyElement( $results, 'gei_discipline' );
-				$match['disciplines'] = $this->naiveStringSearch( $diff['disciplines'], $disciplines );
+				$match['discipline'] = $this->naiveStringSearch( $diff['discipline'], $disciplines );
 			}
 
-			if ( isset( $diff['modules'] ) ) {
+			if ( isset( $diff['module'] ) ) {
 
-				// bring all modules into one array
 				$modules = $this->getTaxonomyElement( $results, 'gei_module' );
-				$match['modules'] = $this->naiveStringSearch( $diff['modules'], $modules );
+				$match['module'] = $this->naiveStringSearch( $diff['module'], $modules );
 			}
 
-			if ( isset( $diff['regions'] ) ) {
+			if ( isset( $diff['region'] ) ) {
 
-				// bring all regions into one array
 				$regions = $this->getTaxonomyElement( $results, 'gei_region' );
-				$match['regions'] = $this->exactStringSearch( $diff['regions'], $regions );
+				$match['region'] = $this->naiveStringSearch( $diff['region'], $regions );
 			}
 
-			if ( isset( $diff['skills'] ) ) {
+			if ( isset( $diff['skill'] ) ) {
 
-				// bring all skills into one array
 				$skills = $this->getTaxonomyElement( $results, 'gei_skill' );
-				$match['skills'] = $this->exactStringSearch( $diff['skills'], $skills );
+				$match['skill'] = $this->naiveStringSearch( $diff['skill'], $skills );
 			}
 			
-			if ( isset( $diff['topics'] ) ) {
+			if ( isset( $diff['topic'] ) ) {
 
-				// bring all topics into one array
 				$topics = $this->getTaxonomyElement( $results, 'gei_topic' );
-				$match['topics'] = $this->exactStringSearch( $diff['topics'], $topics );
+				$match['topic'] = $this->naiveStringSearch( $diff['topic'], $topics );
 			}
 			
-			if ( isset( $diff['types'] ) ) {
+			if ( isset( $diff['type'] ) ) {
 
-				// bring all types into one array
 				$types = $this->getTaxonomyElement( $results, 'gei_type' );
-				$match['types'] = $this->exactStringSearch( $diff['types'], $types );
+				$match['type'] = $this->naiveStringSearch( $diff['type'], $types );
 			}
 			
 			// evaluate matches 
@@ -439,45 +439,6 @@ class ResourcesApi extends Api {
 				}
 			}
 			$matches = array_unique( $matches );
-		}
-
-		return $matches;
-	}
-
-	/**
-	 * Looks for an exact pattern match
-	 * 
-	 * @param type $search_words
-	 * @param array $haystack
-	 * @return array
-	 */
-	protected function exactStringSearch( $search_words, array $haystack ) {
-		$matches = array();
-
-		// look for more than one search word
-		if ( false !== strpos( $search_words, ',' ) ) {
-			$search_words = explode( ',', $search_words );
-
-			// limit to 5
-			$search_words = array_slice( $search_words, 0, 5 );
-			$count = count( $search_words );
-
-			for ( $i = 0; $i < $count; $i ++ ) {
-				foreach ( $haystack as $key => $val ) {
-					if ( preg_match( "/^$search_words[$i]$/i", $val ) ) {
-						$matches[] = $key;
-					};
-				}
-			}
-
-			// get rid of duplicates
-			$matches = array_unique( $matches );
-		} else {
-			foreach ( $haystack as $key => $val ) {
-				if ( 1 === preg_match( "/^$search_words$/i", $val ) ) {
-					$matches[] = $key;
-				};
-			}
 		}
 
 		return $matches;

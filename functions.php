@@ -404,35 +404,43 @@ function gei_do_api() {
 		    'limit' => FILTER_SANITIZE_NUMBER_INT,
 		    'json' => FILTER_SANITIZE_NUMBER_INT,
 		    'xml' => FILTER_SANITIZE_NUMBER_INT,
-		    'titles' => array(
+		    'title' => array(
 				'filter' => FILTER_SANITIZE_STRING,
 				'flags' => FILTER_FLAG_STRIP_HIGH
 		    ),
-		    'authors' => array(
+		    'author' => array(
 				'filter' => FILTER_SANITIZE_STRING,
 				'flags' => FILTER_FLAG_STRIP_LOW
 		    ),
-		    'disciplines' => array(
+		    'abstract' => array(
 				'filter' => FILTER_SANITIZE_STRING,
 				'flags' => FILTER_FLAG_STRIP_LOW
 		    ),
-		    'modules' => array(
+		    'date' => array(
+				'filter' => FILTER_SANITIZE_STRING,
+				'flags' => FILTER_FLAG_STRIP_LOW
+		    ),
+		    'discipline' => array(
+				'filter' => FILTER_SANITIZE_STRING,
+				'flags' => FILTER_FLAG_STRIP_LOW
+		    ),
+		    'module' => array(
 				'filter' => FILTER_SANITIZE_STRING,
 				'flags' => FILTER_FLAG_STRIP_HIGH
 		    ),
-		    'regions' => array(
+		    'region' => array(
 				'filter' => FILTER_SANITIZE_STRING,
 				'flags' => FILTER_FLAG_STRIP_LOW
 		    ),
-		    'skills' => array(
+		    'skill' => array(
 				'filter' => FILTER_SANITIZE_STRING,
 				'flags' => FILTER_FLAG_STRIP_LOW
 		    ),
-		    'topics' => array(
+		    'topic' => array(
 				'filter' => FILTER_SANITIZE_STRING,
 				'flags' => FILTER_FLAG_STRIP_LOW
 		    ),
-		    'types' => array(
+		    'type' => array(
 				'filter' => FILTER_SANITIZE_STRING,
 				'flags' => FILTER_FLAG_STRIP_LOW
 		    ),
