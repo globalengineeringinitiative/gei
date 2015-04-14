@@ -1,4 +1,5 @@
 ( function( $ ) {
+	var $parent = $('body.page-template-page-library #resources.container');
     var $container = $('body.page-template-page-library #isotope');
     $container.isotope({
 		itemSelector: '.resource',
@@ -26,8 +27,11 @@
 			data		: { module : module,  skill : skill, topic : topic, type : type },
 			dataType	: "html",
 			url			: "http://"+window.location.host+"/wp-content/themes/gei/loop-handler.php",
-			beforeSend	: function() {},
+			beforeSend	: function() {
+				$parent.addClass('loading');
+			},
 			success		: function( data ){
+				$parent.removeClass('loading');
 				var $data = $(data);
 				$container.isotope( 'remove', $container.children() );
 				$container.isotope( 'insert', $data );

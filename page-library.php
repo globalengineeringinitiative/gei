@@ -20,6 +20,7 @@ get_header(); ?>
 	</div><!-- #primary -->
 	<?php get_sidebar( 'library' ); ?>
 	<div id="resources" class="container">
+		<i id="loading-indicator" class="fa fa-spinner fa-spin"></i>
 		<div id="isotope" class="resources">
 		</div>
 	</div>

@@ -50,6 +50,15 @@ body {
 				}
 			}
 			#null { display: block; }
+			#loading-indicator {
+				font-size: 2em;
+				opacity: 0;
+				display: none;
+				@include transition(opacity 0.4s);
+			}
+			&.loading {
+				#loading-indicator { opacity: 1; display: inline-block; }
+			}
 		}
 	}
 
