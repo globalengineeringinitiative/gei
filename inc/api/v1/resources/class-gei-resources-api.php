@@ -180,6 +180,12 @@ class ResourcesApi extends Api {
 				$match['discipline'] = $this->naiveStringSearch( $diff['discipline'], $disciplines );
 			}
 
+			if ( isset( $diff['language'] ) ) {
+
+				$languages = $this->getMetaElement( $results, 'language' );
+				$match['language'] = $this->naiveStringSearch( $diff['language'], $languages );
+			}
+
 			if ( isset( $diff['module'] ) ) {
 
 				$modules = $this->getTaxonomyElement( $results, 'gei_module' );
