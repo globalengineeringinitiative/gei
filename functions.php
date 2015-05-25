@@ -527,3 +527,22 @@ register_field_group(array (
 ));
 
 endif;
+
+function gei_nav_menu_items($items,$args) {
+	if ($args->theme_location == 'primary') {
+		if (function_exists('icl_get_languages')) {
+			$languages = icl_get_languages('skip_missing=0');
+			if(1 < count($languages)){
+				foreach($languages as $l){
+					if(!$l['active']){
+						$items = $items.'<li class="menu-item '.$l['language_code'].'"><a href="'.$l['url'].'">'.$l['native_name'].'</a></li>';
+					}
+				}
+			}
+		}
+	}
+ 
+	return $items;
+}
+
+add_filter( 'wp_nav_menu_items', 'gei_nav_menu_items',10,2 );
