@@ -36,7 +36,7 @@
 		$images = get_field( 'banner_images' );
 		if( $images ): ?>
 		    <div id="banner">
-			    <h1 class="site-title"><?php if ( ICL_LANGUAGE_CODE == 'en' ) : ?><span>Global</span> <span>Engineering</span> <span>Initiative</span><?php elseif ( ICL_LANGUAGE_CODE == 'fr' : ?><span>L&rsquo;ing&eacute;nerie</span> <span>globale</span></h1>
+			    <h1 class="site-title"><?php if ( ICL_LANGUAGE_CODE == 'en' ) : ?><span>Global</span> <span>Engineering</span> <span>Initiative</span><?php elseif ( ICL_LANGUAGE_CODE == 'fr' ) : ?><span>L&rsquo;ing&eacute;nerie</span> <span>globale</span><?php endif; ?></h1>
 			    <div class="cycle-slideshow" data-cycle-auto-height="16:9" data-cycle-speed="1000">
 			        <?php foreach( $images as $image ): ?>
 			        	<?php echo wp_get_attachment_image( $image['ID'], 'slide' ); ?>
