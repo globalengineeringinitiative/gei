@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Global Engineering Initiative\n"
-"POT-Creation-Date: 2015-05-26 17:37-0500\n"
-"PO-Revision-Date: 2015-05-26 17:37-0500\n"
+"POT-Creation-Date: 2015-05-26 17:41-0500\n"
+"PO-Revision-Date: 2015-05-26 17:42-0500\n"
 "Last-Translator: Ned Zimmerman <ned@bight.ca>\n"
 "Language-Team: \n"
 "Language: fr_CA\n"
@@ -36,7 +36,7 @@ msgstr[1] ""
 
 #: comments.php:35 comments.php:52
 msgid "Comment navigation"
-msgstr ""
+msgstr "Navigation dans les commentaires"
 
 #: comments.php:36 comments.php:53
 msgid "&larr; Older Comments"
