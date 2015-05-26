@@ -331,6 +331,70 @@ register_field_group(array (
 	'hide_on_screen' => '',
 ));
 
+register_field_group(array (
+	'key' => 'group_5564e99d26587',
+	'title' => 'Library Options (Fran&ccedil;ais)',
+	'fields' => array (
+		array (
+			'key' => 'field_5564e9a596204',
+			'label' => 'No Match Title (Fran&ccedil;ais)',
+			'name' => 'no_match_title_fr',
+			'type' => 'text',
+			'instructions' => 'The title of the error shown when no matches are found.',
+			'required' => 1,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => 'Aucun élément correspondant trouvé',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+			'readonly' => 0,
+			'disabled' => 0,
+		),
+		array (
+			'key' => 'field_5564e9ee96205',
+			'label' => 'No Match Text (Fran&ccedil;ais)',
+			'name' => 'no_match_text_fr',
+			'type' => 'textarea',
+			'instructions' => 'The content of the error shown when no matches are found.',
+			'required' => 1,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => 'Peut-être qu\'il ya trop de filtres sélectionnés. Essayez décochant certaines étiquettes bleues pour obtenir davantage de résultats.',
+			'placeholder' => '',
+			'maxlength' => '',
+			'rows' => '',
+			'new_lines' => 'wpautop',
+			'readonly' => 0,
+			'disabled' => 0,
+		),
+	),
+	'location' => array (
+		array (
+			array (
+				'param' => 'options_page',
+				'operator' => '==',
+				'value' => 'acf-options',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'left',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+));
+
 endif;
 
 function gei_add_editor_styles() {
