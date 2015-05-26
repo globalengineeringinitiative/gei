@@ -1,6 +1,7 @@
 ( function( $ ) {
 	var $parent = $('body.page-template-page-library #resources.container');
     var $container = $('body.page-template-page-library #isotope');
+    var language = $container.attr('data-language');
     $container.isotope({
 		itemSelector: '.resource',
 		layoutMode: 'vertical',
@@ -24,7 +25,7 @@
 	    });
 		$.ajax( {
 			type		: "GET",
-			data		: { module : module,  skill : skill, topic : topic, type : type },
+			data		: { module : module,  skill : skill, topic : topic, type : type, language : language },
 			dataType	: "html",
 			url			: "http://"+window.location.host+"/wp-content/themes/gei/loop-handler.php",
 			beforeSend	: function() {

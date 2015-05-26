@@ -21,7 +21,7 @@ get_header(); ?>
 	<?php get_sidebar( 'library' ); ?>
 	<div id="resources" class="container">
 		<i id="loading-indicator" class="fa fa-spinner fa-spin"></i>
-		<div id="isotope" class="resources">
+		<div id="isotope" class="resources" data-language="<?php echo ( ICL_LANGUAGE_CODE ); ?>">
 		</div>
 	</div>
 <?php get_footer(); ?>
