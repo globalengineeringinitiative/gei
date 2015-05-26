@@ -54,5 +54,15 @@ if ( $library->have_posts() ) :
 		get_template_part( 'content', 'resource-brief' );
 	endwhile;
 else :
-	get_template_part( 'content', 'resource-null' );
-endif; ?>
+	add_filter( 'acf/settings/current_language',function() {
+     	return $_GET['language'];
+	} ); ?>
+	<div id="null" class="resource">
+		<header>
+			<h1 class="resource-title"><?php the_field( 'no_match_title', 'options' ); ?></h1>
+		</header>
+		<section class="resource-content">
+			<?php the_field( 'no_match_text', 'options' ); ?>
+		</section>
+	</div>
+<?php endif; ?>
