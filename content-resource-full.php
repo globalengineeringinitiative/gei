@@ -86,7 +86,7 @@ foreach ( $types as $term ) {
 				endif; ?> <?php _e( 'Download Resource', 'gei' ); ?></a>
 			</li>
 		<?php endif; ?>
-				<li><a href="<?php $library = get_page_by_title( __('Library', 'gei') ); echo get_page_link( $library->ID );  ?>"><i class="fa fa-angle-left"></i> <?php _e( 'Return to Library', 'gei' ); ?></a></li>
+				<li><a href="<?php $library = get_page_by_slug( __('library', 'gei') ); echo get_page_link( $library->ID );  ?>"><i class="fa fa-angle-left"></i> <?php _e( 'Return to Library', 'gei' ); ?></a></li>
 			</ul>
 		</section>
 		<section class="feedback">
