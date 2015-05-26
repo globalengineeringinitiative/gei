@@ -397,6 +397,8 @@ register_field_group(array (
 
 endif;
 
+add_filter('acf/settings/show_admin', '__return_false');
+
 function gei_add_editor_styles() {
     add_editor_style( get_stylesheet_directory_uri() . '/assets/stylesheets/gei.css' );
     add_editor_style( get_stylesheet_directory_uri() . '/assets/stylesheets/editor.css' );
