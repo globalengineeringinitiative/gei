@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Global Engineering Initiative\n"
 "POT-Creation-Date: 2015-05-26 15:06-0500\n"
-"PO-Revision-Date: 2015-05-26 15:06-0500\n"
+"PO-Revision-Date: 2015-05-26 17:20-0500\n"
 "Last-Translator: Ned Zimmerman <ned@bight.ca>\n"
 "Language-Team: \n"
 "Language: fr_CA\n"
@@ -94,7 +94,7 @@ msgstr "﻿Sujet(s)"
 
 #: content-resource-full.php:64
 msgid "Visit Resource Online"
-msgstr ""
+msgstr "Visitez ressource en ligne"
 
 #: content-resource-full.php:86
 msgid "Download Resource"
@@ -106,23 +106,23 @@ msgstr "Bibliothèque de ressources"
 
 #: content-resource-full.php:89
 msgid "Return to Library"
-msgstr ""
+msgstr "Retour à la bibliothèque de ressources"
 
 #: content-resource-full.php:93
 msgid "Issue Report for"
-msgstr ""
+msgstr "Rapport de problème pour"
 
 #: content-resource-full.php:93
 msgid "Hello, I've noticed an issue with"
-msgstr ""
+msgstr "Bonjour, j'ai remarqué un problème avec"
 
 #: content-resource-full.php:93
 msgid "here are the details:"
-msgstr ""
+msgstr "voici les détails:"
 
 #: content-resource-full.php:93
 msgid "Report Issue"
-msgstr ""
+msgstr "Signaler un problème"
 
 #: content.php:22
 #, php-format
@@ -275,7 +275,7 @@ msgstr ""
 
 #: inc/post-types/gei_resource.php:115
 msgid "First Name"
-msgstr ""
+msgstr "Prénom"
 
 #: inc/post-types/gei_resource.php:137
 msgid "Last Name"
@@ -319,7 +319,7 @@ msgstr ""
 
 #: inc/post-types/gei_resource.php:295
 msgid "File Format"
-msgstr ""
+msgstr "Format de fichier"
 
 #: inc/post-types/gei_resource.php:308
 msgid "Adobe PDF"
