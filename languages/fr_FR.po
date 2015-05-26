@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Global Engineering Initiative\n"
-"POT-Creation-Date: 2015-05-26 17:28-0500\n"
-"PO-Revision-Date: 2015-05-26 17:28-0500\n"
+"POT-Creation-Date: 2015-05-26 17:37-0500\n"
+"PO-Revision-Date: 2015-05-26 17:37-0500\n"
 "Last-Translator: Ned Zimmerman <ned@bight.ca>\n"
 "Language-Team: \n"
 "Language: fr_CA\n"
@@ -200,8 +200,9 @@ msgid "Parent Resource"
 msgstr ""
 
 #: inc/post-types/gei_resource.php:27
+msgctxt "URL slug"
 msgid "resources"
-msgstr "﻿ressources"
+msgstr "ressources"
 
 #: inc/post-types/gei_resource.php:47
 #, php-format
@@ -871,3 +872,6 @@ msgstr "﻿Discipline(s)"
 #: sidebar-resource.php:48
 msgid "Region"
 msgstr "﻿Région"
+
+#~ msgid "resources"
+#~ msgstr "﻿ressources"
