@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Global Engineering Initiative\n"
-"POT-Creation-Date: 2015-05-26 15:06-0500\n"
-"PO-Revision-Date: 2015-05-26 17:20-0500\n"
+"POT-Creation-Date: 2015-05-26 17:28-0500\n"
+"PO-Revision-Date: 2015-05-26 17:28-0500\n"
 "Last-Translator: Ned Zimmerman <ned@bight.ca>\n"
 "Language-Team: \n"
 "Language: fr_CA\n"
@@ -100,9 +100,9 @@ msgstr "Visitez ressource en ligne"
 msgid "Download Resource"
 msgstr "﻿Télécharger la ressource"
 
-#: content-resource-full.php:89
-msgid "Library"
-msgstr "Bibliothèque de ressources"
+#: content-resource-full.php:89 functions.php:116
+msgid "library"
+msgstr "bibliotheque"
 
 #: content-resource-full.php:89
 msgid "Return to Library"
@@ -144,10 +144,6 @@ msgstr ""
 #: functions.php:81
 msgid "Sidebar"
 msgstr ""
-
-#: functions.php:116
-msgid "library"
-msgstr "ressources"
 
 #: header.php:23
 msgid "Skip to content"
