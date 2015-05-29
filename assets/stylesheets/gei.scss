@@ -1,7 +1,6 @@
 @import 'bourbon';
 @import 'neat';
 @import 'reset';
-@import 'shame';
 
 $primary: #00ADEE;
 $primary-dark: #0075A1;
@@ -234,6 +233,16 @@ a {
 // structure
 
 body {
+	&.admin-bar {
+		padding-top: 25px + 32px;
+		#masthead {
+			top: 32px;
+		}
+		#banner {
+			top: -8px;
+		}
+	}	
+
 	padding-top: em(36px);
 	#masthead {
 		@include outer-container(100%);
@@ -360,6 +369,7 @@ body {
 			img { width: 100%; height: auto }
 		}
 	}
+
 	#content {
 		@include outer-container;
 		padding: $padding-vertical $padding-horizontal;
@@ -467,6 +477,42 @@ body {
 						}
 					}
 				}
+			}
+			#filters {
+				h1 { font-size: 18px; }
+				h2 { font-size: 14px; }
+				.show-filter {
+					cursor: pointer;
+					.glyphicon {
+						top: 3px;
+						left: 2px;
+						@include transition(all, 0.4s);
+					}
+					&.active {
+						.glyphicon {
+							@include transform(rotate(180deg));
+						}
+					}
+				}
+				.button-group {
+					display: none;
+					&.active { display: block; }
+					padding-left: 0;
+					li {
+						list-style-type: none;
+						padding-bottom: 0.5em;
+					}
+				}
+			}			
+			#null { display: block; }
+			#loading-indicator {
+				font-size: 2em;
+				opacity: 0;
+				display: none;
+				@include transition(opacity 0.4s);
+			}
+			&.loading {
+				#loading-indicator { opacity: 1; display: inline-block; }
 			}
 		}
 		#secondary {
