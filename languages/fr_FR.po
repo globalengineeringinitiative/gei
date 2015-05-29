@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Global Engineering Initiative\n"
-"POT-Creation-Date: 2015-05-29 12:09-0500\n"
-"PO-Revision-Date: 2015-05-29 12:11-0500\n"
+"POT-Creation-Date: 2015-05-29 13:32-0500\n"
+"PO-Revision-Date: 2015-05-29 13:32-0500\n"
 "Last-Translator: Ned Zimmerman <ned@bight.ca>\n"
 "Language-Team: \n"
 "Language: fr_CA\n"
@@ -107,9 +107,9 @@ msgstr "Visitez ressource en ligne"
 msgid "Download Resource"
 msgstr "﻿Télécharger la ressource"
 
-#: content-resource-full.php:89 functions.php:116
-msgid "library"
-msgstr "bibliotheque"
+#: content-resource-full.php:89
+msgid "Resource Library"
+msgstr "Bibliothèque de ressources"
 
 #: content-resource-full.php:89
 msgid "Return to Library"
@@ -352,11 +352,7 @@ msgstr "Diaporama PowerPoint"
 msgid "Word Document"
 msgstr "Document Word"
 
-#: inc/post-types/gei_resource.php:325
-msgid "Language"
-msgstr "Langue"
-
-#: inc/post-types/gei_resource.php:355 sidebar-resource.php:56
+#: inc/post-types/gei_resource.php:325 sidebar-resource.php:56
 msgid "Media Type"
 msgstr "Type de média"
 
@@ -890,6 +886,12 @@ msgstr "﻿Discipline(s)"
 #: sidebar-resource.php:48
 msgid "Region"
 msgstr "﻿Région"
+
+#~ msgid "library"
+#~ msgstr "bibliotheque"
+
+#~ msgid "Language"
+#~ msgstr "Langue"
 
 #~ msgid "resources"
 #~ msgstr "﻿ressources"

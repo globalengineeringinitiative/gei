@@ -10,7 +10,7 @@ require_once( '../../../wp-load.php' );
 
 global $sitepress;
 
-$sitepress->switch_lang( $_GET['language'] );
+$sitepress->switch_lang( $_GET['language'] ); // get posts in current language only
 
 $tax = array(
 	'relation' => 'AND',
