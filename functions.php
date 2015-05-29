@@ -113,7 +113,7 @@ function gei_scripts() {
 	
 	}
 	
-	if ( is_page( __( 'library', 'gei' ) ) ) {
+	if ( is_page_template( 'page-library.php' ) ) {
 		
 		wp_enqueue_script( 'isotope', get_template_directory_uri() . '/assets/javascripts/isotope.pkgd.min.js', array( 'jquery' ), '2.1', true );
 		
@@ -362,7 +362,7 @@ function gei_rewrite_rules_for_api() {
 }
 
 /**
- * Expects the pattern `api/v1/books/{id}`
+ * Expects the pattern `api/v1/resources/`
  * 
  */
 function gei_do_api() {
@@ -382,13 +382,13 @@ function gei_do_api() {
 		\GlobalEngineeringInitiative\Api_v1\Api::apiErrors( 'resource' );
 	}
 
-	// parse url, at minimum we need `v1` and `books`
+	// parse url, at minimum we need `v1` and `resources`
 	$parts = explode( '/', $nouns );
 
 	// required 'v1'
 	$version = array_shift( $parts );
 
-	// required 'books'
+	// required 'resources'
 	$resource = array_shift( $parts );
 
 	// optional 'id'
@@ -425,6 +425,10 @@ function gei_do_api() {
 		    'discipline' => array(
 				'filter' => FILTER_SANITIZE_STRING,
 				'flags' => FILTER_FLAG_STRIP_LOW
+		    ),
+		    'language' => array(
+				'filter' => FILTER_SANITIZE_STRING,
+				'flags' => FILTER_FLAG_STRIP_HIGH
 		    ),
 		    'module' => array(
 				'filter' => FILTER_SANITIZE_STRING,

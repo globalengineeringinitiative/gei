@@ -24,6 +24,7 @@ class ResourcesApi extends Api {
 	protected $default_variations = array(
 	    'offset' => 0,
 	    'limit' => 100,
+	    'language' => 'en',
 	);
 	
 	/**
@@ -59,7 +60,6 @@ class ResourcesApi extends Api {
 		'external_url',
 		'file_download_url',
 		'file_format',
-		'language',
 	);
 
 	/**
@@ -84,8 +84,13 @@ class ResourcesApi extends Api {
 	 */
 	function __construct( $id = '', $variations = '' ) {
 
-		// only serve info about published resources
-		$this->published_resources = $this->getPublishedResourceIds();
+		// Merge args with default args
+		$args = wp_parse_args( $variations, $this->default_variations );
+
+		// add id to the args
+		if ( $id ) {
+			$args['id'] = $id;
+		}
 
 		// get the format, set it as instance variable
 		if ( isset( $variations['json'] ) && 1 == $variations['json'] ) {
@@ -96,13 +101,8 @@ class ResourcesApi extends Api {
 			unset( $variations['xml'] );
 		}
 
-		// Merge args with default args
-		$args = wp_parse_args( $variations, $this->default_variations );
-
-		// add id to the args
-		if ( $id ) {
-			$args['id'] = $id;
-		}
+		// only serve info about published resources
+		$this->published_resources = $this->getPublishedResourceIds( $args );
 
 		$this->controller( $args );
 	}
@@ -180,12 +180,6 @@ class ResourcesApi extends Api {
 				$match['discipline'] = $this->naiveStringSearch( $diff['discipline'], $disciplines );
 			}
 
-			if ( isset( $diff['language'] ) ) {
-
-				$languages = $this->getMetaElement( $results, 'language' );
-				$match['language'] = $this->naiveStringSearch( $diff['language'], $languages );
-			}
-
 			if ( isset( $diff['module'] ) ) {
 
 				$modules = $this->getTaxonomyElement( $results, 'gei_module' );
@@ -214,6 +208,16 @@ class ResourcesApi extends Api {
 
 				$types = $this->getTaxonomyElement( $results, 'gei_type' );
 				$match['type'] = $this->naiveStringSearch( $diff['type'], $types );
+			}
+			
+			if ( isset( $diff['language'] ) ) {
+				
+				$match['language'] = array();
+				
+				foreach ( $results as $key => $value ) {
+					$match['language'][] = $key;
+				}
+				
 			}
 			
 			// evaluate matches 
@@ -466,6 +470,8 @@ class ResourcesApi extends Api {
 				$resource[$resource_id]['id'] = $resource_id;
 				$resource[$resource_id]['url'] = get_the_permalink( $resource_id );
 				$resource[$resource_id]['title'] = get_the_title( $resource_id );
+				$language_information = wpml_get_language_information( $resource_id );
+				$resource[$resource_id]['language'] = substr( $language_information['locale'], 0, 2 );
 				foreach ( $this->getMetaValues( $resource_id ) as $key => $value ) {
 					$resource[$resource_id][$key] = $value;
 				}
@@ -481,6 +487,8 @@ class ResourcesApi extends Api {
 			$resource[$args['id']]['id'] = $args['id'];
 			$resource[$args['id']]['url'] = get_the_permalink( $args['id'] );
 			$resource[$args['id']]['title'] = get_the_title( $args['id'] );
+			$language_information = wpml_get_language_information( $args['id'] );
+			$resource[$args['id']]['language'] = substr( $language_information['locale'], 0, 2 );
 			foreach ( $this->getMetaValues( $args['id'] ) as $key => $value ) {
 				$resource[$args['id']][$key] = $value;
 			}
@@ -498,12 +506,17 @@ class ResourcesApi extends Api {
 	 * @global global $wpdb
 	 * @return array of resource_ids for resources that are published
 	 */
-	function getPublishedResourceIds() {
+	function getPublishedResourceIds( $args ) {
+		global $sitepress;
+
+		$sitepress->switch_lang( $args['language'] );
+
 		$result = array();
 		
 		$resources = get_posts( array(
 			'post_type' => 'gei_resource',
 			'posts_per_page' => -1,
+			'suppress_filters' => 0,
 		) );
 		
 		foreach ( $resources as $resource ) {

@@ -185,6 +185,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
         "id": 376,
         "url": "http://globalengineeringinitiative.com/resources/what-is-a-global-engineer/",
         "title": "What is a Global Engineer?",
+        "language": "en",
         "authors": [
             "Dhaval Bhavsar"
         ],
@@ -193,7 +194,6 @@ if ( ! defined( 'ABSPATH' ) ) exit;
         "short_summary": "EWB Canada takes us through the definition of global engineering.",
         "summary": "&lt;p&gt;EWB Canada takes us through the definition of global engineering.&lt;/p&gt;&lt;p&gt;&lt;iframe width=\&quot;100%\&quot; height=\&quot;360\&quot; src=\&quot;//www.youtube.com/embed/ALod6HXZQuU\&quot; frameborder=\&quot;0\&quot; allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;",
         "external_url": "http://www.youtube.com/watch?v=ALod6HXZQuU&feature=youtu.be",
-        "language": "en",
         "module": "Introduction to Global Engineering",
         "topic": "Curriculum Reform",
         "type": "Video",
