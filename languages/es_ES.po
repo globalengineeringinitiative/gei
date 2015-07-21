@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Global Engineering Initiative\n"
 "POT-Creation-Date: 2015-05-29 13:32-0500\n"
-"PO-Revision-Date: 2015-05-29 13:32-0500\n"
+"PO-Revision-Date: 2015-07-21 16:16-0300\n"
 "Last-Translator: Ned Zimmerman <ned@bight.ca>\n"
 "Language-Team: Ned Zimmerman <ned@bight.ca>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.4\n"
+"X-Generator: Poedit 1.8.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -21,85 +21,88 @@ msgstr ""
 
 #: 404.php:15
 msgid "Page not found."
-msgstr ""
+msgstr "Página no encontrada"
 
 #: 404.php:19
 msgid "We couldn&rsquo;t find your page. Perhaps it&rsquo;s in the library?"
-msgstr ""
+msgstr "No pudimos encontrar su página. ¿Tal vez está en la biblioteca?"
 
 #: comments.php:28
 #, php-format
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Un idea en &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s ideas en &ldquo;%2$s&rdquo;"
 
 #: comments.php:35 comments.php:52
 msgid "Comment navigation"
-msgstr ""
+msgstr "Navegación de comentarios"
 
 #: comments.php:36 comments.php:53
 msgid "&larr; Older Comments"
-msgstr ""
+msgstr "&larr; Comentarios anteriores"
 
 #: comments.php:37 comments.php:54
 msgid "Newer Comments &rarr;"
-msgstr ""
+msgstr "Comentarios más recientes &rarr;"
 
 #: comments.php:64
 msgid "Comments are closed."
-msgstr ""
+msgstr "Los comentarios están deshabitados"
 
 #: content-none.php:13
 msgid "Nothing Found"
-msgstr ""
+msgstr "No se ha encontrado nada"
 
 #: content-none.php:19
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
+msgstr "Listo para publicar su primer post? <a href=“%s”>Iniciar aquí </a>."
 
 #: content-none.php:23
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
+"Lo sentimos, pero no encontramos nada con los términos de tu búsqueda. Por "
+"favor, inténtalo de nuevo con palabras diferentes."
 
 #: content-none.php:28
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
+"Parece que no podemos encontrar lo que andas buscando. Quizá buscar te ayude."
 
 #: content-page.php:18 content-single.php:20 content.php:29
 msgid "Pages:"
-msgstr ""
+msgstr "Páginas:"
 
 #: content-page.php:25
 msgid "Edit This"
-msgstr ""
+msgstr "Editar esto"
 
 #: content-resource-brief.php:67 sidebar-resource.php:24
 msgid "Module(s)"
-msgstr ""
+msgstr "Módulo(s)"
 
 #: content-resource-brief.php:77 sidebar-resource.php:32
 msgid "Skill(s)"
-msgstr ""
+msgstr "Habilidad(s)"
 
 #: content-resource-brief.php:87 sidebar-resource.php:40
 msgid "Topic(s)"
-msgstr ""
+msgstr "Tópico(s)"
 
 #: content-resource-full.php:64
 msgid "Visit Resource Online"
-msgstr ""
+msgstr "Visite recurso en línea"
 
 #: content-resource-full.php:86
 msgid "Download Resource"
-msgstr ""
+msgstr "Descargar recurso"
 
 #: content-resource-full.php:89
 msgid "Resource Library"
@@ -107,98 +110,99 @@ msgstr "Biblioteca de recursos"
 
 #: content-resource-full.php:89
 msgid "Return to Library"
-msgstr ""
+msgstr "Regresar a la biblioteca"
 
 #: content-resource-full.php:93
 msgid "Issue Report for"
-msgstr ""
+msgstr "Informe para la"
 
 #: content-resource-full.php:93
 msgid "Hello, I've noticed an issue with"
-msgstr ""
+msgstr "Hola, he notado un problema con"
 
 #: content-resource-full.php:93
 msgid "here are the details:"
-msgstr ""
+msgstr "Aquí están los detalles:"
 
 #: content-resource-full.php:93
 msgid "Report Issue"
-msgstr ""
+msgstr "Informe un problema"
 
 #: content.php:22
 #, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "Continue leyendo %s <span class=“meta-na”>&rarr;</span>"
 
 #: footer.php:15
 msgid "Subscribe to our newsletter"
-msgstr ""
+msgstr "Suscríbete a nuestro boletín de noticias"
 
 #: footer.php:15
 msgid "Subscribe"
-msgstr ""
+msgstr "Suscribirse"
 
 #: functions.php:46 header.php:30
 msgid "Primary Menu"
-msgstr ""
+msgstr "Menú Principal"
 
 #: functions.php:81
 msgid "Sidebar"
-msgstr ""
+msgstr "Barra Lateral"
 
 #: header.php:23
 msgid "Skip to content"
-msgstr ""
+msgstr "Saltar el contenido"
 
 #: header.php:39
 msgid "<span>Global</span> <span>Engineering</span> <span>Initiative</span>"
 msgstr ""
+"<span>Iniciativa</span> <span>Global</span> <span>De la ingeniería</span>"
 
 #: inc/extras.php:63
 #, php-format
 msgid "Page %s"
-msgstr ""
+msgstr "Página %s"
 
 #: inc/post-types/gei_resource.php:6 inc/post-types/gei_resource.php:8
 #: inc/post-types/gei_resource.php:18
 msgid "Resources"
-msgstr ""
+msgstr "Recursos"
 
 #: inc/post-types/gei_resource.php:7
 msgid "Resource"
-msgstr ""
+msgstr "Recurso"
 
 #: inc/post-types/gei_resource.php:9
 msgid "New Resource"
-msgstr ""
+msgstr "Nuevo recurso"
 
 #: inc/post-types/gei_resource.php:10
 msgid "Add New"
-msgstr ""
+msgstr "Añadir nuevo"
 
 #: inc/post-types/gei_resource.php:11
 msgid "Add New Resource"
-msgstr ""
+msgstr "Añadir nuevo recurso"
 
 #: inc/post-types/gei_resource.php:12
 msgid "Edit Resource"
-msgstr ""
+msgstr "Editar recurso"
 
 #: inc/post-types/gei_resource.php:13
 msgid "View Resource"
-msgstr ""
+msgstr "Ver recurso"
 
 #: inc/post-types/gei_resource.php:14
 msgid "Search Resources"
-msgstr ""
+msgstr "Buscar recursos"
 
 #: inc/post-types/gei_resource.php:15
 msgid "No Resources found"
-msgstr ""
+msgstr "No se encontraron recursos."
 
 #: inc/post-types/gei_resource.php:16
 msgid "No Resources found in trash"
-msgstr ""
+msgstr "Ninguno recurso encontrada en la papelera."
 
 #: inc/post-types/gei_resource.php:17
 msgid "Parent Resource"
@@ -207,44 +211,44 @@ msgstr ""
 #: inc/post-types/gei_resource.php:27
 msgctxt "URL slug"
 msgid "resources"
-msgstr ""
+msgstr "recursos"
 
 #: inc/post-types/gei_resource.php:47
 #, php-format
 msgid "Resource updated. <a target=\"_blank\" href=\"%s\">View Resource</a>"
-msgstr ""
+msgstr "Recursos actualizados. <a target=“_blank” href=“%s”>Ver recurso</a>"
 
 #: inc/post-types/gei_resource.php:48
 msgid "Custom field updated."
-msgstr ""
+msgstr "Campo personalizado actualizado"
 
 #: inc/post-types/gei_resource.php:49
 msgid "Custom field deleted."
-msgstr ""
+msgstr "Campo personalizado borrado"
 
 #: inc/post-types/gei_resource.php:50
 msgid "Resource updated."
-msgstr ""
+msgstr "Recursos actualizados."
 
 #: inc/post-types/gei_resource.php:52
 #, php-format
 msgid "Resource restored to revision from %s"
-msgstr ""
+msgstr "Recurso restaurado a revisión de %s"
 
 #: inc/post-types/gei_resource.php:53
 #, php-format
 msgid "Resource published. <a href=\"%s\">View Resource</a>"
-msgstr ""
+msgstr "Recurso publicado. <a href=“%s”>Ver recurso</a>"
 
 #: inc/post-types/gei_resource.php:54
 msgid "Resource saved."
-msgstr ""
+msgstr "Recursos guardados."
 
 #: inc/post-types/gei_resource.php:55
 #, php-format
 msgid ""
 "Resource submitted. <a target=\"_blank\" href=\"%s\">Preview Resource</a>"
-msgstr ""
+msgstr "Recursos actualizados. <a target=“_blank” href=“%s”>Ver recurso</a>"
 
 #: inc/post-types/gei_resource.php:56
 #, php-format
@@ -252,117 +256,121 @@ msgid ""
 "Resource scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" href="
 "\"%2$s\">Preview Resource</a>"
 msgstr ""
+"Programado para: <strong>%1$s</strong>. <a target=\"_blank\" href=\"%2$s"
+"\">Vista previa</a>"
 
 #: inc/post-types/gei_resource.php:58
 msgid "M j, Y @ G:i"
-msgstr ""
+msgstr "I, j \\d\\e F \\d\\e Y \\a \\l\\a\\s G:i"
 
 #: inc/post-types/gei_resource.php:59
 #, php-format
 msgid ""
 "Resource draft updated. <a target=\"_blank\" href=\"%s\">Preview Resource</a>"
 msgstr ""
+"<strong>Borrador actualizado.</strong> <a target=“_blank” href=“%s”>Vista "
+"previa</a>"
 
 #: inc/post-types/gei_resource.php:74
 msgid "Subtitle"
-msgstr ""
+msgstr "Subtítulo"
 
 #: inc/post-types/gei_resource.php:96
 msgid "Author(s)"
-msgstr ""
+msgstr "Autor(es)"
 
 #: inc/post-types/gei_resource.php:111
 msgid "Add Author"
-msgstr ""
+msgstr "Agregar autor"
 
 #: inc/post-types/gei_resource.php:115
 msgid "First Name"
-msgstr ""
+msgstr "Primer nombre"
 
 #: inc/post-types/gei_resource.php:137
 msgid "Last Name"
-msgstr ""
+msgstr "Apellido"
 
 #: inc/post-types/gei_resource.php:161
 msgid "Source Organization / Institution"
-msgstr ""
+msgstr "Institución origen"
 
 #: inc/post-types/gei_resource.php:183
 msgid "Publication Date"
-msgstr ""
+msgstr "Fecha de publicación"
 
 #: inc/post-types/gei_resource.php:201
 msgid "Short Summary"
-msgstr ""
+msgstr "Resumen corto"
 
 #: inc/post-types/gei_resource.php:205
 msgid "120 characters max."
-msgstr ""
+msgstr "120 caracteres máximos."
 
 #: inc/post-types/gei_resource.php:223
 msgid "Summary"
-msgstr ""
+msgstr "Resumen"
 
 #: inc/post-types/gei_resource.php:227
 msgid "500 words max."
-msgstr ""
+msgstr "500 palabras máximos."
 
 #: inc/post-types/gei_resource.php:242
 msgid "Recommended Citation"
-msgstr ""
+msgstr "Citación recomendada"
 
 #: inc/post-types/gei_resource.php:261
 msgid "External URL"
-msgstr ""
+msgstr "URL externa"
 
 #: inc/post-types/gei_resource.php:278
 msgid "File Download URL"
-msgstr ""
+msgstr "URL de descarga de archivo"
 
 #: inc/post-types/gei_resource.php:295
 msgid "File Format"
-msgstr ""
+msgstr "Formato de archivo"
 
 #: inc/post-types/gei_resource.php:308
 msgid "Adobe PDF"
-msgstr ""
+msgstr "Adobe PDF"
 
 #: inc/post-types/gei_resource.php:309
 msgid "Excel Spreadsheet"
-msgstr ""
+msgstr "Excel Spreadsheet"
 
 #: inc/post-types/gei_resource.php:310
 msgid "PowerPoint Slideshow"
-msgstr ""
+msgstr "PowerPoint Slideshow"
 
 #: inc/post-types/gei_resource.php:311
 msgid "Word Document"
-msgstr ""
+msgstr "Word Document"
 
 #: inc/post-types/gei_resource.php:325 sidebar-resource.php:56
 msgid "Media Type"
-msgstr ""
+msgstr "Tipo de medio"
 
 #: inc/taxonomies/gei_discipline.php:19 inc/taxonomies/gei_discipline.php:33
 msgid "Disciplines"
-msgstr ""
+msgstr "Disciplinas"
 
 #: inc/taxonomies/gei_discipline.php:20
 msgctxt "taxonomy general name"
 msgid "Discipline"
-msgstr ""
+msgstr "Disciplina"
 
 #: inc/taxonomies/gei_discipline.php:21
 msgid "Search Disciplines"
-msgstr ""
+msgstr "Buscar disciplinas"
 
 #: inc/taxonomies/gei_discipline.php:22
 msgid "Popular Disciplines"
-msgstr ""
+msgstr "Disciplinas populares"
 
 #: inc/taxonomies/gei_discipline.php:23
 msgid "All Disciplines"
-msgstr ""
+msgstr "Todas las disciplinas"
 
 #: inc/taxonomies/gei_discipline.php:24
 msgid "Parent Discipline"
@@ -374,11 +382,11 @@ msgstr ""
 
 #: inc/taxonomies/gei_discipline.php:26
 msgid "Edit Discipline"
-msgstr ""
+msgstr "Editar disciplina"
 
 #: inc/taxonomies/gei_discipline.php:27
 msgid "Update Discipline"
-msgstr ""
+msgstr "Actualizar disciplina"
 
 #: inc/taxonomies/gei_discipline.php:28 inc/taxonomies/gei_discipline.php:29
 msgid "New Discipline"
@@ -398,24 +406,24 @@ msgstr ""
 
 #: inc/taxonomies/gei_module.php:19 inc/taxonomies/gei_module.php:33
 msgid "Modules"
-msgstr ""
+msgstr "Módulos"
 
 #: inc/taxonomies/gei_module.php:20
 msgctxt "taxonomy general name"
 msgid "Module"
-msgstr ""
+msgstr "Módulo"
 
 #: inc/taxonomies/gei_module.php:21
 msgid "Search Modules"
-msgstr ""
+msgstr "Buscar Módulos"
 
 #: inc/taxonomies/gei_module.php:22
 msgid "Popular Modules"
-msgstr ""
+msgstr "Módulos populares"
 
 #: inc/taxonomies/gei_module.php:23
 msgid "All Modules"
-msgstr ""
+msgstr "Todos los módulos"
 
 #: inc/taxonomies/gei_module.php:24
 msgid "Parent Module"
@@ -451,20 +459,20 @@ msgstr ""
 
 #: inc/taxonomies/gei_region.php:19 inc/taxonomies/gei_region.php:33
 msgid "Regions"
-msgstr ""
+msgstr "Regiones"
 
 #: inc/taxonomies/gei_region.php:20
 msgctxt "taxonomy general name"
 msgid "Region"
-msgstr ""
+msgstr "Región"
 
 #: inc/taxonomies/gei_region.php:21
 msgid "Search Regions"
-msgstr ""
+msgstr "Buscar regiones"
 
 #: inc/taxonomies/gei_region.php:22
 msgid "Popular Regions"
-msgstr ""
+msgstr "Regiones populares"
 
 #: inc/taxonomies/gei_region.php:23
 msgid "All Regions"
@@ -504,20 +512,20 @@ msgstr ""
 
 #: inc/taxonomies/gei_skill.php:19 inc/taxonomies/gei_skill.php:33
 msgid "Skills"
-msgstr ""
+msgstr "Habilidad"
 
 #: inc/taxonomies/gei_skill.php:20
 msgctxt "taxonomy general name"
 msgid "Skill"
-msgstr ""
+msgstr "Habilidades"
 
 #: inc/taxonomies/gei_skill.php:21
 msgid "Search Skills"
-msgstr ""
+msgstr "Buscar habilidades"
 
 #: inc/taxonomies/gei_skill.php:22
 msgid "Popular Skills"
-msgstr ""
+msgstr "Habilidades populares"
 
 #: inc/taxonomies/gei_skill.php:23
 msgid "All Skills"
@@ -557,12 +565,12 @@ msgstr ""
 
 #: inc/taxonomies/gei_topic.php:19 inc/taxonomies/gei_topic.php:33
 msgid "Topics"
-msgstr ""
+msgstr "Tópicos"
 
 #: inc/taxonomies/gei_topic.php:20
 msgctxt "taxonomy general name"
 msgid "Topic"
-msgstr ""
+msgstr "Tópico"
 
 #: inc/taxonomies/gei_topic.php:21
 msgid "Search Topics"
@@ -610,12 +618,12 @@ msgstr ""
 
 #: inc/taxonomies/gei_type.php:19 inc/taxonomies/gei_type.php:33
 msgid "Types"
-msgstr ""
+msgstr "Tipos"
 
 #: inc/taxonomies/gei_type.php:20
 msgctxt "taxonomy general name"
 msgid "Type"
-msgstr ""
+msgstr "Tipo"
 
 #: inc/taxonomies/gei_type.php:21
 msgid "Search Types"
@@ -659,184 +667,184 @@ msgstr ""
 
 #: inc/taxonomies/gei_type.php:32
 msgid "Choose from the most used Types"
-msgstr ""
+msgstr "Seleccione entre los tipos mas comunes"
 
 #: inc/template-tags.php:21
 msgid "Posts navigation"
-msgstr ""
+msgstr "Navegación de publicaciones"
 
 #: inc/template-tags.php:25
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr ""
+msgstr "<span class=“meta-nao”>&larr;</span> Las entradas más antiguas"
 
 #: inc/template-tags.php:29
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "Las entradas más nuevas <span class=“meta-nav”>&rarr;</span>"
 
 #: inc/template-tags.php:52
 msgid "Post navigation"
-msgstr ""
+msgstr "Navegacion de Publicaciones"
 
 #: inc/template-tags.php:55
 msgctxt "Previous post link"
 msgid "<span class=\"meta-nav\">&larr;</span>&nbsp;%title"
-msgstr ""
+msgstr "<span class=\\\"meta-nav\\\">&larr;</span>&nbsp;%Título"
 
 #: inc/template-tags.php:56
 msgctxt "Next post link"
 msgid "%title&nbsp;<span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
+msgstr "%title&nbsp;<span class=\"meta-nav\">&rarr;</span>"
 
 #: inc/template-tags.php:82
 #, php-format
 msgctxt "post date"
 msgid "Posted on %s"
-msgstr ""
+msgstr "Publicado el %s"
 
 #: inc/template-tags.php:87
 #, php-format
 msgctxt "post author"
 msgid "by %s"
-msgstr ""
+msgstr "por %s"
 
 #: inc/template-tags.php:104 inc/template-tags.php:110
 msgid ", "
-msgstr ""
+msgstr ","
 
 #: inc/template-tags.php:106
 #, php-format
 msgid "Posted in %1$s"
-msgstr ""
+msgstr "Publicado en %1$s"
 
 #: inc/template-tags.php:112
 #, php-format
 msgid "Tagged %1$s"
-msgstr ""
+msgstr "Etiquetado %1$s"
 
 #: inc/template-tags.php:118
 msgid "Leave a comment"
-msgstr ""
+msgstr "Dejar un comentario"
 
 #: inc/template-tags.php:118
 msgid "1 Comment"
-msgstr ""
+msgstr "1 Comentario"
 
 #: inc/template-tags.php:118
 msgid "% Comments"
-msgstr ""
+msgstr "% Comentarios"
 
 #: inc/template-tags.php:122
 msgid "Edit"
-msgstr ""
+msgstr "Editar"
 
 #: inc/template-tags.php:139
 #, php-format
 msgid "Category: %s"
-msgstr ""
+msgstr "Categoría: %s"
 
 #: inc/template-tags.php:141
 #, php-format
 msgid "Tag: %s"
-msgstr ""
+msgstr "Etiqueta: %s"
 
 #: inc/template-tags.php:143
 #, php-format
 msgid "Author: %s"
-msgstr ""
+msgstr "Autor: %s"
 
 #: inc/template-tags.php:145
 #, php-format
 msgid "Year: %s"
-msgstr ""
+msgstr "Año: %s"
 
 #: inc/template-tags.php:145
 msgctxt "yearly archives date format"
 msgid "Y"
-msgstr ""
+msgstr "Y"
 
 #: inc/template-tags.php:147
 #, php-format
 msgid "Month: %s"
-msgstr ""
+msgstr "Mes: %s"
 
 #: inc/template-tags.php:147
 msgctxt "monthly archives date format"
 msgid "F Y"
-msgstr ""
+msgstr "F Y"
 
 #: inc/template-tags.php:149
 #, php-format
 msgid "Day: %s"
-msgstr ""
+msgstr "Día: %s"
 
 #: inc/template-tags.php:149
 msgctxt "daily archives date format"
 msgid "F j, Y"
-msgstr ""
+msgstr "j F, Y"
 
 #: inc/template-tags.php:151
 msgctxt "post format archive title"
 msgid "Asides"
-msgstr ""
+msgstr "Apartes"
 
 #: inc/template-tags.php:153
 msgctxt "post format archive title"
 msgid "Galleries"
-msgstr ""
+msgstr "Galerías"
 
 #: inc/template-tags.php:155
 msgctxt "post format archive title"
 msgid "Images"
-msgstr ""
+msgstr "Imágenes"
 
 #: inc/template-tags.php:157
 msgctxt "post format archive title"
 msgid "Videos"
-msgstr ""
+msgstr "Vídeos"
 
 #: inc/template-tags.php:159
 msgctxt "post format archive title"
 msgid "Quotes"
-msgstr ""
+msgstr "Citas"
 
 #: inc/template-tags.php:161
 msgctxt "post format archive title"
 msgid "Links"
-msgstr ""
+msgstr "Enlaces"
 
 #: inc/template-tags.php:163
 msgctxt "post format archive title"
 msgid "Statuses"
-msgstr ""
+msgstr "Status"
 
 #: inc/template-tags.php:165
 msgctxt "post format archive title"
 msgid "Audio"
-msgstr ""
+msgstr "Audio"
 
 #: inc/template-tags.php:167
 msgctxt "post format archive title"
 msgid "Chats"
-msgstr ""
+msgstr "Charlas"
 
 #: inc/template-tags.php:169
 #, php-format
 msgid "Archives: %s"
-msgstr ""
+msgstr "Archivos: %s"
 
 #: inc/template-tags.php:173
 #, php-format
 msgid "%1$s: %2$s"
-msgstr ""
+msgstr "%1$s: %2$s"
 
 #: inc/template-tags.php:175
 msgid "Archives"
-msgstr ""
+msgstr "Archivos"
 
 #: search.php:16
 #, php-format
 msgid "Search Results for: %s"
-msgstr ""
+msgstr "Buscar resultados de: %s"
 
 #: sidebar-library.php:9
 msgid "Filter"
@@ -844,19 +852,19 @@ msgstr "Filtro"
 
 #: sidebar-library.php:10
 msgid "Module"
-msgstr ""
+msgstr "Módulo"
 
 #: sidebar-library.php:17
 msgid "Skill"
-msgstr ""
+msgstr "Habilidad"
 
 #: sidebar-library.php:24
 msgid "Topic"
-msgstr ""
+msgstr "Tópicos"
 
 #: sidebar-library.php:31
 msgid "Type"
-msgstr ""
+msgstr "Tipo"
 
 #: sidebar-library.php:38
 msgid "Search"
@@ -864,15 +872,15 @@ msgstr "Buscar"
 
 #: sidebar-resource.php:14
 msgid "Resource Data"
-msgstr ""
+msgstr "Datos del recurso"
 
 #: sidebar-resource.php:16
 msgid "Discipline(s)"
-msgstr ""
+msgstr "Disciplina(s)"
 
 #: sidebar-resource.php:48
 msgid "Region"
-msgstr ""
+msgstr "Región"
 
 #~ msgid "library"
 #~ msgstr "biblioteca"
