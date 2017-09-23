@@ -27,7 +27,7 @@
 			type		: "GET",
 			data		: { module : module,  skill : skill, topic : topic, type : type, language : language },
 			dataType	: "html",
-			url			: "http://"+window.location.host+"/wp-content/themes/gei/loop-handler.php",
+			url			: "https://"+window.location.host+"/wp-content/themes/gei/loop-handler.php",
 			beforeSend	: function() {
 				$parent.addClass('loading');
 			},
